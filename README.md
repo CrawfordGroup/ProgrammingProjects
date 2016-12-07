@@ -39,12 +39,12 @@ Now you should see a directory called `ProgrammingProjects` inside you will find
  - [Data Types and Variables](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Data-Types-and-Variables)
  - [Operators](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Operators)
  - [Control Statements](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Control-Statements)
- - Input/Output
- - Functions 
- - Variable Scope and Reference Types
- - Memory Allocation 
- - Classes and Objects 
- - Overloading and Templates
+ - [Input/Output](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Input-Output)
+ - [Functions](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Functions)
+ - [Variable Scope and Reference Types](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Variable-Scope-and-Reference-Types)
+ - [Memory Allocation](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Memory-Allocation)
+ - [Classes and Objects](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Classes-and-Objects)
+ - [Overloading and Templates](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Overloading-and-Templates)
 
 # Quantum Chemistry Programming Projects 
  - Project #1: Molecular Geometry/rotational constant analysis.
