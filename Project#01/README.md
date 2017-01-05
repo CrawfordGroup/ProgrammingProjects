@@ -6,7 +6,7 @@
 The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found in project1-intsructions.pdf
 
 ## Step 1: Read the Coordinate Data from Input
-The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) [input](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) to the program is:
+The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) to use as input to the program is:
 
     7
     6  0.000000000000     0.000000000000     0.000000000000
@@ -17,7 +17,7 @@ The input to the program is the set of Cartesian coordinates of the atoms (in bo
     1 -1.007295466862    -1.669971842687    -0.705916966833
     1 -1.007295466862     1.669971842687    -0.705916966833
     
-The first line above is the number of atoms (an integer), while the remaining lines contain the z-values and x-, y-, and z-coordinates of each atom (one integer followed by three double-precision floating-point numbers). This input file ("[acetaldehyde.dat]((https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat))") along with a few other test cases can be found in this repository in the `input` directory.
+The first line above is the number of atoms (an integer), while the remaining lines contain the z-values and x-, y-, and z-coordinates of each atom (one integer followed by three double-precision floating-point numbers). This [input file](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) ("acetaldehyde.dat") along with a few other test cases can be found in this repository in the [input directory](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2301/input).
 
 After downloading the file to your computer (to a file called “geom.dat”, for example), you must open the file, read the data from each line into appropriate variables, and finally close the file.
 
