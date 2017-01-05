@@ -1,9 +1,10 @@
 # TODO:
 - [  ] Add embedded equations
-- [  ] Add input/output links for test cases
+- [  ] Add hints and solutions for each step
+- [ x ] Add input/output links for test cases
 
 # Molecular-Geometry-Analysis
-The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found in project1-intsructions.pdf
+The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found [here](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/project1-instructions.pdf).
 
 ## Step 1: Read the Coordinate Data from Input
 The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) to use as input to the program is:
@@ -141,9 +142,9 @@ EQUATION
 
 
 ## Test Cases
-- Acetaldehyde: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) | output
-- Benzene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/benzene.dat) | output
-- Allene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/allene.dat) | output
+- Acetaldehyde: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/output/acetaldehyde_out.txt)
+- Benzene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/benzene.dat) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/output/benzene_out.txt)
+- Allene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/allene.dat) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/output/allene_out.txt)
 
 ## References
-E.B. Wilson, J.C. Decius, and P.C. Cross, <u>Molecular Vibrations</u>, McGraw-Hill, 1955.
+E.B. Wilson, J.C. Decius, and P.C. Cross, __Molecular Vibrations__, McGraw-Hill, 1955.
