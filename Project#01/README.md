@@ -38,4 +38,49 @@ where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 - Solution
 
 ## Step 3: Bond Angles
-Calculate all possible bond angles. For example, the angle, φ \phi_{ijk}, between atoms i-j-k, where j is the central atom is given by:
+Calculate all possible bond angles. For example, the angle, &phi;<sub>ijk</sub>, between atoms i-j-k, where j is the central atom is given by:
+
+```
+EQUATION
+```
+
+where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
+
+```
+EQUATION
+```
+
+- Hint 1: Memory allocation for the unit vectors
+- Hint 2: Avoiding a divide-by-zero
+- Hint 3: Memory allocation for the bond angles
+- Hint 4: Smart printing
+- Hint 5: Trigonometric functions
+- Solution
+
+## Step 4: Out-of-Plane Angles
+Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>ijkl</sub> for atom i out of the plane containing atoms j-k-l (with k as the central atom, connected to i) is given by:
+
+```
+EQUATION
+```
+
+- Hint 1: Memory allocation?
+- Hint 2: Cross products
+- Hint 3: Numerical precision
+- Hint 4: Smarter printing
+- Solution
+
+## Step 5: Torsion/Dihedral Angles
+Calculate all possible torsional angles. For example, the torsional angle &tau;<sub>ijkl</sub> for the atom connectivity i-j-k-l is given by:
+```
+EQUATION
+```
+
+Can you also determine the sign of the torsional angle?
+
+- Hint 1: Memory allocation?
+- Hint 2: Numerical precision
+- Hint 3: Smart printing
+- Hint 4: Sign
+- Solution
+
