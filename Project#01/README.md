@@ -38,4 +38,4 @@ where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 - Solution
 
 ## Step 3: Bond Angles
-Calculate all possible bond angles. For example, the angle, \phi_{ijk}, between atoms i-j-k, where j is the central atom is given by:
+Calculate all possible bond angles. For example, the angle, φ \phi_{ijk}, between atoms i-j-k, where j is the central atom is given by:
