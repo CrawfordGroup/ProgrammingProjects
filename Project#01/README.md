@@ -1,8 +1,12 @@
+# TODO:
+- [  ] Add embedded equations
+- [  ] Add input/output links for test cases
+
 # Molecular-Geometry-Analysis
 The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found in project1-intsructions.pdf
 
 ## Step 1: Read the Coordinate Data from Input
-The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) to use as input to the program is:
+The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) [input](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) to the program is:
 
     7
     6  0.000000000000     0.000000000000     0.000000000000
@@ -13,7 +17,7 @@ The input to the program is the set of Cartesian coordinates of the atoms (in bo
     1 -1.007295466862    -1.669971842687    -0.705916966833
     1 -1.007295466862     1.669971842687    -0.705916966833
     
-The first line above is the number of atoms (an integer), while the remaining lines contain the z-values and x-, y-, and z-coordinates of each atom (one integer followed by three double-precision floating-point numbers). This input file ("acetaldehyde.dat") can be found in this repository.
+The first line above is the number of atoms (an integer), while the remaining lines contain the z-values and x-, y-, and z-coordinates of each atom (one integer followed by three double-precision floating-point numbers). This input file ("[acetaldehyde.dat]((https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat))") along with a few other test cases can be found in this repository in the `input` directory.
 
 After downloading the file to your computer (to a file called “geom.dat”, for example), you must open the file, read the data from each line into appropriate variables, and finally close the file.
 
@@ -72,6 +76,7 @@ EQUATION
 
 ## Step 5: Torsion/Dihedral Angles
 Calculate all possible torsional angles. For example, the torsional angle &tau;<sub>ijkl</sub> for the atom connectivity i-j-k-l is given by:
+
 ```
 EQUATION
 ```
@@ -84,3 +89,61 @@ Can you also determine the sign of the torsional angle?
 - Hint 4: Sign
 - Solution
 
+## Step 6: Center-of-Mass Translation
+Find the center of mass of the molecule:
+
+```
+EQUATION
+```
+
+where m<sub>i</sub> is the mass of atom i and the summation runs over all atoms in the molecule.
+
+Translate the input coordinates of the molecule to the center-of-mass.
+
+- Hint 1: Atomic masses
+- Hint 2: Translating between atomic number and atomic mass
+- Solution
+
+## Step 7: Principal Moments of Inertia
+Calculate elements of the [moment of inertia tensor](http://en.wikipedia.org/wiki/Moment_of_inertia_tensor).
+
+Diagonal:
+```
+EQUATION
+```
+
+Off-diagonal:
+```
+EQUATION
+```
+
+Diagonalize the inertia tensor to obtain the principal moments of inertia:
+```
+EQUATION
+```
+
+Report the moments of inertia in amu bohr<sup>2</sup>, amu &#8491;<sup>2</sup>, and g cm<sup>2</sup>.
+
+Based on the relative values of the principal moments, determine the [molecular rotor type](http://en.wikipedia.org/wiki/Rotational_spectroscopy): linear, oblate, prolate, asymmetric.
+
+- Hint 1: Diagonalization of a 3×3 matrix
+- Hint 2: Physical constants
+- Solution
+
+## Step 8: Rotational Constants
+Compute the rotational constants in cm<sup>-1</sup> and MHz:
+
+```
+EQUATION
+```
+
+- Solution
+
+
+## Test Cases
+- Acetaldehyde: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/acetaldehyde.dat) | output
+- Benzene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/benzene.dat) | output
+- Allene: [input coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/input/allene.dat) | output
+
+## References
+E.B. Wilson, J.C. Decius, and P.C. Cross, <u>Molecular Vibrations</u>, McGraw-Hill, 1955.
