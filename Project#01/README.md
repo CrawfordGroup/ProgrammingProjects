@@ -6,6 +6,8 @@
 # Molecular-Geometry-Analysis
 The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found [here](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301/project1-instructions.pdf).
 
+We thank Dr. Yukio Yamaguchi of the University of Georgia for the original version of this project.
+
 ## Step 1: Read the Coordinate Data from Input
 The input to the program is the set of Cartesian coordinates of the atoms (in bohr) and their associated atomic numbers. A sample molecule (acetaldehyde) to use as input to the program is:
 
