@@ -1,8 +1,3 @@
-# TODO:
-- [ ] Add embedded equations
-- [x] Add hints and solutions for each step
-- [x] Add input/output links for test cases
-
 # Molecular-Geometry-Analysis
 The purpose of this project is to introduce you to fundamental C-language (or C++) programming techniques in the context of a scientific problem, viz. the calculation of the internal coordinates (bond lengths, bond angles, dihedral angles), moments of inertia, and rotational constants of a polyatomic molecule. A concise set of instructions for this project may be found [here](./project1-instructions.pdf).
 
