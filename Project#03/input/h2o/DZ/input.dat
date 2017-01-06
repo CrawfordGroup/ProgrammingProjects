@@ -1,0 +1,12 @@
+psi: (
+  label = "H2O SCF Test Case"
+  memory = (10.0 MB)
+  wfn = scf
+  jobtype = oeprop
+  delete_tei = false
+  delete_oei = false
+  reference = rhf
+  basis = "DZ"
+  subgroup = c1
+  zmat = ((o) (h 1 1.1) (h 1 1.1 2 104.0))
+)
