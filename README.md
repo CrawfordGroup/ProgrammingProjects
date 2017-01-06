@@ -1,11 +1,11 @@
 # Underdevelopment
 
 ###TODO:
- - [ x ] add links for fundamentals
- - [  ] add links for programming projects
- - [  ] add project inputs
- - [  ] add project readme's
- - [  ] expand git intro
+ - [x] add links for fundamentals
+ - [x] add links for programming projects
+ - [ ] add project inputs
+ - [ ] add project readme's
+ - [ ] expand git intro
 
 # C++ Programming Tutorial in Chemistry
 This tutorial is intended to touch on many, but certainly not all, of the fundamentals of C++ programming with an emphasis on quantum chemistry.  Although I hope this section will get you started, it is not a substitute for a more complete reference manual.  For more C++ language details, you may find the standard text by Josuttis [buy it](http://www.amazon.com/C-Standard-Library-Tutorial-Reference/dp/0201379260) useful or, for VT users, get it [on-line from the campus library](http://proquest.safaribooksonline.com/0201379260) or a decent on-line tutorial such as [this one](http://www.cplusplus.com/doc/tutorial/) or [this one](http://www.cprogramming.com/tutorial.html). 
