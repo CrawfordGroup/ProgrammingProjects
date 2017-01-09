@@ -29,6 +29,7 @@ Calculate the interatomic distances using the expression:
 
 ```
 EQUATION
+R_{ij} = \sqrt{\left(x_{i} - x_{j}\right)^{2} + \left(y_i - y_j\right)^{2} + \left(z_i - z_j \right)^{2}}
 ```
 
 where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
@@ -44,12 +45,14 @@ Calculate all possible bond angles. For example, the angle, &phi;<sub>ijk</sub>,
 
 ```
 EQUATION
+{\rm cos}\phi_{ijk} = {\bf {\rm \tilde{e}_{ji}} \dot {\bf {\rm \tilde{e}_{jk}}}
 ```
 
 where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
 
 ```
 EQUATION
+e_{ij}^{x} = - \left(x_i - x_j\right) / R_{ij}, \qquad e_{ij}^{y} = - \left(y_i - y_j\right) / R_{ij}, \qquad e_{ij}^{z} = - \left( z_i - z_j\right)/R_{ij}
 ```
 
 - [Hint 1](./hints/hint3-1.md): Memory allocation for the unit vectors
@@ -64,6 +67,7 @@ Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>i
 
 ```
 EQUATION
+\sin\theta_{ijkl} = \frac{ {\bf {\rm \tilde{e}_{kj}}} \cross {\bf {\rm \tilde{e}_{kl}}}}{\sin\phi_{jkl}} \dot {\bf {\rm \tilde{e}_{ki}}}
 ```
 
 - [Hint 1](./hints/hint4-1.md): Memory allocation?
@@ -77,6 +81,11 @@ Calculate all possible torsional angles. For example, the torsional angle &tau;<
 
 ```
 EQUATION
+\cos \tau_{ijkl}  =
+\frac{
+  \left({\bf {\rm \tilde{e}_{ij}}} \cross {\bf {\rm \tilde{e}_{jk}}}\right) \dot
+  \left({\bf {\rm \tilde{e}_{jk}}} \cross {\bf {\rm \tilde{e}_{kl}}}\right)
+  }{\sin \phi_{ijk} \sin \phi_{jkl}}
 ```
 
 Can you also determine the sign of the torsional angle?
@@ -92,6 +101,9 @@ Find the center of mass of the molecule:
 
 ```
 EQUATION
+{\rm X}_{c.m.} = \frac{\sum_{i} m_i x_i}{\sum_i m_i}, \qquad
+{\rm Y}_{c.m.} = \frac{\sum_{i} m_i y_i}{\sum_i m_i}, \qquad
+{\rm Z}_{c.m.} = \frac{\sum_{i} m_i z_i}{\sum_i m_i}.
 ```
 
 where m<sub>i</sub> is the mass of atom i and the summation runs over all atoms in the molecule.
@@ -108,16 +120,23 @@ Calculate elements of the [moment of inertia tensor](http://en.wikipedia.org/wik
 Diagonal:
 ```
 EQUATION
+{\rm I}_{xx} = \sum_i m_i\left(y_{i}^{2} + z_{i}^{2}\right), \qquad
+{\rm I}_{yy} = \sum_i m_i\left(x_{i}^{2} + z_{i}^{2}\right), \qquad
+{\rm I}_{zz} = \sum_i m_i\left(x_{i}^{2} + y_{i}^{2}\right).
 ```
 
 Off-diagonal:
 ```
 EQUATION
+{\rm I}_{xy} = \sum_i m_i x_i y_i, \qquad
+{\rm I}_{xz} = \sum_i m_i x_i z_i, \qquad
+{\rm I}_{yz} = \sum_i m_i y_i z_i.
 ```
 
 Diagonalize the inertia tensor to obtain the principal moments of inertia:
 ```
 EQUATION
+{\rm I}_a \le {\rm I}_b \le {\rm I}_c
 ```
 
 Report the moments of inertia in amu bohr<sup>2</sup>, amu &#8491;<sup>2</sup>, and g cm<sup>2</sup>.
@@ -133,6 +152,11 @@ Compute the rotational constants in cm<sup>-1</sup> and MHz:
 
 ```
 EQUATION
+A = \frac{h}{8\pi^2c I_a} \\
+B = \frac{h}{8\pi^2c I_b} \\
+C = \frac{h}{8\pi^2c I_c} \\
+A \ge B \ge C
+
 ```
 
 - [Solution](./hints/step8-solution.md)
