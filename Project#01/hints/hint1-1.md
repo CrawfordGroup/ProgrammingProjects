@@ -1,21 +1,21 @@
-## Project 1: Hint 1
+## Hint 1-1: Opening and closing the file stream
 To open a file named "geom.dat", you need a file stream object:
 
 ```c++
-  #include <iostream>
-  #include <fstream>
-  #include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <iomanip>
 
-  ...
-  
-  int main()
-  {  
+...
+
+int main()
+{  
     ifstream input("geom.dat");
-  
+
     ...
-  
+
     input.close();
-  
+
     return 0;
-  }
+}
 ```
