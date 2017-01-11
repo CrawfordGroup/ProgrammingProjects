@@ -6,32 +6,15 @@ double x[50], y[50], z[50];
 
 A more elegant solution is to allocate the memory dynamically for each array once you know the number of atoms:
 ```c++
-#include <iostream>
-#include <fstream>
-#include <iomanip>
+int natom;
+input >> natom;
 
-...
+int *zval = new int[natom];
+double *x = new double[natom];
+double *y = new double[natom];
+double *z = new double[natom];
 
-int main()
-{  
-  ifstream input("geom.dat");
-
-  int natom;
-  input >> natom;
-
-  input.close();
-  
-  int *zval = new int[natom];
-  double *x = new double[natom];
-  double *y = new double[natom];
-  double *z = new double[natom];
-
-  ...
-
-  delete[] zval;  delete[] x;  delete[] y;  delete[] z;
-
-  return 0;
-}
+delete[] zval;  delete[] x;  delete[] y;  delete[] z;
 ```
 
 Don't forget to delete[] the memory after you're finished!
