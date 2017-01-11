@@ -1,4 +1,4 @@
-To open a file named "geom.dat", you need a file stream object:
+Use the ">>" operator to read the data from the file:
 
 ```c++
 #include <iostream>
@@ -11,8 +11,9 @@ int main()
 {  
   ifstream input("geom.dat");
 
-  ...
-
+  int natom;
+  input >> natom;
+    
   input.close();
 
   return 0;
