@@ -29,7 +29,7 @@ Now you should see a directory called `ProgrammingProjects` inside you will find
 # The Fundamentals (Updated: 29 August 2014) 
  - [An Initial Example](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/An-Initial-Example)
  - [What is a "Compilation"](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/What-is-a-%22Compilation%22%3F) 
- - [Code Comments](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Comments)
+ - [Code Comments](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Code-Comments)
  - [Data Types and Variables](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Data-Types-and-Variables)
  - [Operators](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Operators)
  - [Control Statements](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Control-Statements)
