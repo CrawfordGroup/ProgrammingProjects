@@ -1,0 +1,1 @@
+Note that, unlike the interatomic distance matrix and the three-dimensional bond angle array, the out-of-plane angles are not needed later in the program.  Hence, there is no need to allocate any memory to store these angles. Simply print them one at a time.

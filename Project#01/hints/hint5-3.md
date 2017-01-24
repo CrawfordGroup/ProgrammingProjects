@@ -1,0 +1,1 @@
+To print only the unique dihedral angles, it is straightforward in this case to limit the loop structure over i, j, k, and l to keep j < i, k < j, and l < k. Also, one should limit the printing only to atom pairs that are close together.
