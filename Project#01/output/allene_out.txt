@@ -1,4 +1,3 @@
-```
 Number of atoms: 7
 Input Cartesian coordinates:
 6       0.000000000000       0.000000000000       1.889725988579
@@ -153,4 +152,3 @@ Rotational constants (MHz):
 
 Rotational constants (cm-1):
 	A = 5.5756	 B = 0.2855	 C = 0.2855
-  ```
