@@ -28,11 +28,6 @@ After downloading the file to your computer (to a file called “geom.dat”, fo
 Calculate the interatomic distances using the expression:
 
 ![Bond Lengths](./figures/distances.png)
-![Bond Lengths](./figures/distances2.png)
-```
-EQUATION
-R_{ij} = \sqrt{\left(x_{i} - x_{j}\right)^{2} + \left(y_i - y_j\right)^{2} + \left(z_i - z_j \right)^{2}}
-```
 
 where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 
@@ -45,17 +40,11 @@ where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 ## Step 3: Bond Angles
 Calculate all possible bond angles. For example, the angle, &phi;<sub>ijk</sub>, between atoms i-j-k, where j is the central atom is given by:
 
-```
-EQUATION
-{\rm cos}\phi_{ijk} = {\bf {\rm \tilde{e}_{ji}} \dot {\bf {\rm \tilde{e}_{jk}}}
-```
+![Bond Angles](./figures/bond-angle.png)
 
 where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
 
-```
-EQUATION
-e_{ij}^{x} = - \left(x_i - x_j\right) / R_{ij}, \qquad e_{ij}^{y} = - \left(y_i - y_j\right) / R_{ij}, \qquad e_{ij}^{z} = - \left( z_i - z_j\right)/R_{ij}
-```
+![Unit Vectors](./figures/unit-vectors.png)
 
 - [Hint 1](./hints/hint3-1.md): Memory allocation for the unit vectors
 - [Hint 2](./hints/hint3-2.md): Avoiding a divide-by-zero
@@ -67,10 +56,7 @@ e_{ij}^{x} = - \left(x_i - x_j\right) / R_{ij}, \qquad e_{ij}^{y} = - \left(y_i 
 ## Step 4: Out-of-Plane Angles
 Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>ijkl</sub> for atom i out of the plane containing atoms j-k-l (with k as the central atom, connected to i) is given by:
 
-```
-EQUATION
-\sin\theta_{ijkl} = \frac{ {\bf {\rm \tilde{e}_{kj}}} \cross {\bf {\rm \tilde{e}_{kl}}}}{\sin\phi_{jkl}} \dot {\bf {\rm \tilde{e}_{ki}}}
-```
+![Out-of-Plane Angles](./figures/oop-angle.png)
 
 - [Hint 1](./hints/hint4-1.md): Memory allocation?
 - [Hint 2](./hints/hint4-2.md): Cross products
@@ -81,14 +67,7 @@ EQUATION
 ## Step 5: Torsion/Dihedral Angles
 Calculate all possible torsional angles. For example, the torsional angle &tau;<sub>ijkl</sub> for the atom connectivity i-j-k-l is given by:
 
-```
-EQUATION
-\cos \tau_{ijkl}  =
-\frac{
-  \left({\bf {\rm \tilde{e}_{ij}}} \cross {\bf {\rm \tilde{e}_{jk}}}\right) \dot
-  \left({\bf {\rm \tilde{e}_{jk}}} \cross {\bf {\rm \tilde{e}_{kl}}}\right)
-  }{\sin \phi_{ijk} \sin \phi_{jkl}}
-```
+![Torsion/Dihedral Angles](./figures/torsion-angle.png)
 
 Can you also determine the sign of the torsional angle?
 
@@ -101,12 +80,7 @@ Can you also determine the sign of the torsional angle?
 ## Step 6: Center-of-Mass Translation
 Find the center of mass of the molecule:
 
-```
-EQUATION
-{\rm X}_{c.m.} = \frac{\sum_{i} m_i x_i}{\sum_i m_i}, \qquad
-{\rm Y}_{c.m.} = \frac{\sum_{i} m_i y_i}{\sum_i m_i}, \qquad
-{\rm Z}_{c.m.} = \frac{\sum_{i} m_i z_i}{\sum_i m_i}.
-```
+![Center of Mass](./figures/center-of-mass.png)
 
 where m<sub>i</sub> is the mass of atom i and the summation runs over all atoms in the molecule.
 
@@ -120,26 +94,13 @@ Translate the input coordinates of the molecule to the center-of-mass.
 Calculate elements of the [moment of inertia tensor](http://en.wikipedia.org/wiki/Moment_of_inertia_tensor).
 
 Diagonal:
-```
-EQUATION
-{\rm I}_{xx} = \sum_i m_i\left(y_{i}^{2} + z_{i}^{2}\right), \qquad
-{\rm I}_{yy} = \sum_i m_i\left(x_{i}^{2} + z_{i}^{2}\right), \qquad
-{\rm I}_{zz} = \sum_i m_i\left(x_{i}^{2} + y_{i}^{2}\right).
-```
+![Diagonal](./figures/inertia-diag.png)
 
 Off-diagonal:
-```
-EQUATION
-{\rm I}_{xy} = \sum_i m_i x_i y_i, \qquad
-{\rm I}_{xz} = \sum_i m_i x_i z_i, \qquad
-{\rm I}_{yz} = \sum_i m_i y_i z_i.
-```
+![Off-diagonal](./figures/inertia-off-diag.png)
 
 Diagonalize the inertia tensor to obtain the principal moments of inertia:
-```
-EQUATION
-{\rm I}_a \le {\rm I}_b \le {\rm I}_c
-```
+![Principal Moments of Inertia](./figures/principal-mom-of-inertia.png)
 
 Report the moments of inertia in amu bohr<sup>2</sup>, amu &#8491;<sup>2</sup>, and g cm<sup>2</sup>.
 
@@ -152,14 +113,7 @@ Based on the relative values of the principal moments, determine the [molecular 
 ## Step 8: Rotational Constants
 Compute the rotational constants in cm<sup>-1</sup> and MHz:
 
-```
-EQUATION
-A = \frac{h}{8\pi^2c I_a} \\
-B = \frac{h}{8\pi^2c I_b} \\
-C = \frac{h}{8\pi^2c I_c} \\
-A \ge B \ge C
-
-```
+![Rotational Constants](./figures/rot-const.png)
 
 - [Solution](./hints/step8-solution.md)
 
