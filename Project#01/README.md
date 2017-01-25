@@ -94,12 +94,15 @@ Translate the input coordinates of the molecule to the center-of-mass.
 Calculate elements of the [moment of inertia tensor](http://en.wikipedia.org/wiki/Moment_of_inertia_tensor).
 
 Diagonal:
+
 ![Diagonal](./figures/inertia-diag.png)
 
 Off-diagonal:
+
 ![Off-diagonal](./figures/inertia-off-diag.png)
 
 Diagonalize the inertia tensor to obtain the principal moments of inertia:
+
 ![Principal Moments of Inertia](./figures/principal-mom-of-inertia.png)
 
 Report the moments of inertia in amu bohr<sup>2</sup>, amu &#8491;<sup>2</sup>, and g cm<sup>2</sup>.
