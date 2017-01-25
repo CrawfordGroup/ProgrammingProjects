@@ -28,6 +28,7 @@ After downloading the file to your computer (to a file called “geom.dat”, fo
 Calculate the interatomic distances using the expression:
 
 ![Bond Lengths](./figures/distances.png)
+![Bond Lengths](./figures/distances2.png)
 ```
 EQUATION
 R_{ij} = \sqrt{\left(x_{i} - x_{j}\right)^{2} + \left(y_i - y_j\right)^{2} + \left(z_i - z_j \right)^{2}}
