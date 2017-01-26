@@ -27,7 +27,7 @@ After downloading the file to your computer (to a file called “geom.dat”, fo
 ## Step 2: Bond Lengths
 Calculate the interatomic distances using the expression:
 
-![Bond Lengths](./figures/distances.png)
+<img src="./figures/distances.png" width="400">
 
 where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 
@@ -40,11 +40,11 @@ where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 ## Step 3: Bond Angles
 Calculate all possible bond angles. For example, the angle, &phi;<sub>ijk</sub>, between atoms i-j-k, where j is the central atom is given by:
 
-![Bond Angles](./figures/bond-angle.png)
+<img src="./figures/bond-angle.png" width="150">
 
 where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
 
-![Unit Vectors](./figures/unit-vectors.png)
+<img src="./figures/unit-vectors.png" width="600">
 
 - [Hint 1](./hints/hint3-1.md): Memory allocation for the unit vectors
 - [Hint 2](./hints/hint3-2.md): Avoiding a divide-by-zero
@@ -56,7 +56,7 @@ where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
 ## Step 4: Out-of-Plane Angles
 Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>ijkl</sub> for atom i out of the plane containing atoms j-k-l (with k as the central atom, connected to i) is given by:
 
-![Out-of-Plane Angles](./figures/oop-angle.png)
+<img src="./figures/oop-angle.png" width="200">
 
 - [Hint 1](./hints/hint4-1.md): Memory allocation?
 - [Hint 2](./hints/hint4-2.md): Cross products
@@ -67,7 +67,7 @@ Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>i
 ## Step 5: Torsion/Dihedral Angles
 Calculate all possible torsional angles. For example, the torsional angle &tau;<sub>ijkl</sub> for the atom connectivity i-j-k-l is given by:
 
-![Torsion/Dihedral Angles](./figures/torsion-angle.png)
+<img src="./figures/torsion-angle.png" width="250">
 
 Can you also determine the sign of the torsional angle?
 
@@ -80,7 +80,7 @@ Can you also determine the sign of the torsional angle?
 ## Step 6: Center-of-Mass Translation
 Find the center of mass of the molecule:
 
-![Center of Mass](./figures/center-of-mass.png)
+<img src="./figures/center-of-mass.png" width="600">
 
 where m<sub>i</sub> is the mass of atom i and the summation runs over all atoms in the molecule.
 
@@ -95,15 +95,15 @@ Calculate elements of the [moment of inertia tensor](http://en.wikipedia.org/wik
 
 Diagonal:
 
-![Diagonal](./figures/inertia-diag.png)
+<img src="./figures/inertia-diag.png" width="750">
 
 Off-diagonal:
 
-![Off-diagonal](./figures/inertia-off-diag.png)
+<img src="./figures/inertia-off-diag.png" width="600">
 
 Diagonalize the inertia tensor to obtain the principal moments of inertia:
 
-![Principal Moments of Inertia](./figures/principal-mom-of-inertia.png)
+<img src="./figures/principal-mom-of-inertia.png" width="125">
 
 Report the moments of inertia in amu bohr<sup>2</sup>, amu &#8491;<sup>2</sup>, and g cm<sup>2</sup>.
 
@@ -116,7 +116,7 @@ Based on the relative values of the principal moments, determine the [molecular 
 ## Step 8: Rotational Constants
 Compute the rotational constants in cm<sup>-1</sup> and MHz:
 
-![Rotational Constants](./figures/rot-const.png)
+<img src="./figures/rot-const.png" width="100">
 
 - [Solution](./hints/step8-solution.md)
 
