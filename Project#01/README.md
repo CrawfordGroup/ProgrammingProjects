@@ -56,7 +56,7 @@ where the e<sub>ij</sub> are unit vectors between the atoms, e.g.,
 ## Step 4: Out-of-Plane Angles
 Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>ijkl</sub> for atom i out of the plane containing atoms j-k-l (with k as the central atom, connected to i) is given by:
 
-<img src="./figures/oop-angle.png" height="40">
+<img src="./figures/oop-angle.png" height="50">
 
 - [Hint 1](./hints/hint4-1.md): Memory allocation?
 - [Hint 2](./hints/hint4-2.md): Cross products
@@ -67,7 +67,7 @@ Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>i
 ## Step 5: Torsion/Dihedral Angles
 Calculate all possible torsional angles. For example, the torsional angle &tau;<sub>ijkl</sub> for the atom connectivity i-j-k-l is given by:
 
-<img src="./figures/torsion-angle.png" height="40">
+<img src="./figures/torsion-angle.png" height="50">
 
 Can you also determine the sign of the torsional angle?
 
