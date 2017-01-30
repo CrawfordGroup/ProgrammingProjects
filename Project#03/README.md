@@ -12,10 +12,10 @@ The test case used in the following discussion is for a water molecule with a bo
 and a bond angle of 104.0<sup>o</sup> with an STO-3G basis set.  The input to the project consists of the 
 [nuclear repulsion energy](./input/h2o/STO-3G/enuc.dat)
    and pre-computed sets of one- and two-electron integrals: 
-[overlap integrals](./input/h2o/STO-3G/s.dat)
-[kinetic-energy integrals](./input/h2o/STO-3G/t.dat)
-[nuclear-attraction integrals](./input/h2o/STO-3G/v.dat)
-[electron-electron repulsion integrals](./input/h2o/STO-3G/eri.dat)
+[overlap integrals](./input/h2o/STO-3G/s.dat),
+[kinetic-energy integrals](./input/h2o/STO-3G/t.dat),
+[nuclear-attraction integrals](./input/h2o/STO-3G/v.dat),
+[electron-electron repulsion integrals](./input/h2o/STO-3G/eri.dat).
 
 
 ## Step 1: Nuclear Repulsion Energy
@@ -245,6 +245,7 @@ Test both the energy and the density for convergence:
 EQUATION
 \Delta E = E^i_{\rm elec} - E^{i-1}_{\rm elec} < \delta_1
 ```
+
 ```
 EQUATION
 {\rm rms}_D = \left[ \sum_{\mu\nu} \left( D^i_{\mu\nu} - D^{i-1}_{\mu\nu} \right)^2 \right]^{1/2} < \delta_2
@@ -298,8 +299,9 @@ EQUATION
 q_A = Z_A - 2 \sum_{\mu \in A} ({\mathbf D S})_{\mu\mu},
 ```
 where the summation is limited to only those basis functions centered on atom *A*.
+
 ## Test Cases
- * STO-3G Water [Geometry](./input/h2o/STO-3G/geom.dat) |[Enuc](./input/h2o/STO-3G/enuc.dat) |[S](./input/h2o/STO-3G/s.dat) |[T](./input/h2o/STO-3G/t.dat) |[V](./input/h2o/STO-3G/v.dat) |[ERI](./input/h2o/STO-3G/eri.dat) |[Mu_X](./input/h2o/STO-3G/mux.dat) |[Mu_Y](./input/h2o/STO-3G/muy.dat) |[Mu_Z](./input/h2o/STO-3G/muz.dat) |[output](./output/sto3g_h2o/output.dat)
- *  DZ Water [Geometry](./input/h2o/DZ/geom.dat) |[Enuc](./input/h2o/DZ/enuc.dat) |[S](./input/h2o/DZ/s.dat) |[T](./input/h2o/DZ/t.dat) |[V](./input/h2o/DZ/v.dat) |[ERI](./input/h2o/DZ/eri.dat) |[Mu_X](./input/h2o/DZ/mux.dat) |[Mu_Y](./input/h2o/DZ/muy.dat) |[Mu_Z](./input/h2o/DZ/muz.dat) |[output](./output/dz_h2o/output.dat)
- *  DZP Water [Geometry](./input/h2o/DZP/geom.dat) |[Enuc](./input/h2o/DZP/enuc.dat) |[S](./input/h2o/DZP/s.dat) |[T](./input/h2o/DZP/t.dat) |[V](./input/h2o/DZP/v.dat) |[ERI](./input/h2o/DZP/eri.dat) |[Mu_X](./input/h2o/DZP/mux.dat) |[Mu_Y](./input/h2o/DZP/muy.dat) |[Mu_Z](./input/h2o/DZP/muz.dat) |[output](./output/dzp_h2o/output.dat)
- *  STO-3G Methane [Geometry](./input/ch4/STO-3G/geom.dat) |[Enuc](./input/ch4/STO-3G/enuc.dat) |[S](./input/ch4/STO-3G/s.dat) |[T](./input/ch4/STO-3G/t.dat) |[V](./input/ch4/STO-3G/v.dat) |[ERI](./input/ch4/STO-3G/eri.dat) |[Mu_X](./input/ch4/STO-3G/mux.dat) |[Mu_Y](./input/ch4/STO-3G/muy.dat) |[Mu_Z](./input/ch4/STO-3G/muz.dat) |[output](./output/sto3g_ch4/output.dat)
+ * STO-3G Water [Geometry](./input/h2o/STO-3G/geom.dat) | [Enuc](./input/h2o/STO-3G/enuc.dat) | [S](./input/h2o/STO-3G/s.dat) | [T](./input/h2o/STO-3G/t.dat) | [V](./input/h2o/STO-3G/v.dat) | [ERI](./input/h2o/STO-3G/eri.dat) | [Mu_X](./input/h2o/STO-3G/mux.dat) | [Mu_Y](./input/h2o/STO-3G/muy.dat) | [Mu_Z](./input/h2o/STO-3G/muz.dat) | [output](./output/sto3g_h2o/output.dat)
+ *  DZ Water [Geometry](./input/h2o/DZ/geom.dat) | [Enuc](./input/h2o/DZ/enuc.dat) | [S](./input/h2o/DZ/s.dat) | [T](./input/h2o/DZ/t.dat) | [V](./input/h2o/DZ/v.dat) | [ERI](./input/h2o/DZ/eri.dat) | [Mu_X](./input/h2o/DZ/mux.dat) | [Mu_Y](./input/h2o/DZ/muy.dat) | [Mu_Z](./input/h2o/DZ/muz.dat) | [output](./output/dz_h2o/output.dat)
+ *  DZP Water [Geometry](./input/h2o/DZP/geom.dat) | [Enuc](./input/h2o/DZP/enuc.dat) | [S](./input/h2o/DZP/s.dat) | [T](./input/h2o/DZP/t.dat) | [V](./input/h2o/DZP/v.dat) | [ERI](./input/h2o/DZP/eri.dat) | [Mu_X](./input/h2o/DZP/mux.dat) | [Mu_Y](./input/h2o/DZP/muy.dat) | [Mu_Z](./input/h2o/DZP/muz.dat) | [output](./output/dzp_h2o/output.dat)
+ *  STO-3G Methane [Geometry](./input/ch4/STO-3G/geom.dat) | [Enuc](./input/ch4/STO-3G/enuc.dat) | [S](./input/ch4/STO-3G/s.dat) | [T](./input/ch4/STO-3G/t.dat) | [V](./input/ch4/STO-3G/v.dat) | [ERI](./input/ch4/STO-3G/eri.dat) | [Mu_X](./input/ch4/STO-3G/mux.dat) | [Mu_Y](./input/ch4/STO-3G/muy.dat) | [Mu_Z](./input/ch4/STO-3G/muz.dat) | [output](./output/sto3g_ch4/output.dat)

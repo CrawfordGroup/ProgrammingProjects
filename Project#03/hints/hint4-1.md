@@ -1,4 +1,4 @@
-The S<sup>-1/2</sup> matrix for the H2O test case is:
+The S<sup>-1/2</sup> matrix for the H<sub>2</sub>O test case is:
 ```
            1           2           3           4           5           6           7
 
