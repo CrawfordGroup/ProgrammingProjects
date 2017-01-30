@@ -18,7 +18,7 @@ which consists of second derivatives of the energy with respect to atomic positi
 EQUATION
 F_{ij} = \frac{\partial^{2}V}{\partial q_i \partial q_j}
 ```
-The Hessian matrix (in units of E<sub>h</sub>/a<sub>0</sub><sup>2</sup>) can be downloaded [here](./input/h2o_hessian.txt) for the H<sub>2<\sub>O test case. 
+The Hessian matrix (in units of E<sub>h</sub>/a<sub>0</sub><sup>2</sup>) can be downloaded [here](./input/h2o_hessian.txt) for the H<sub>2</sub>O test case. 
 The first integer in the file is the number of atoms (which you should compare to the corresponding value from the geometry file as a test of consistency), 
 while the remaining values have the following format:
 
