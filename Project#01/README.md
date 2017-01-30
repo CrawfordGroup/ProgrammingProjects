@@ -42,7 +42,7 @@ Calculate all possible bond angles. For example, the angle, &phi;<sub>ijk</sub>,
 
 <img src="./figures/bond-angle.png" width="150">
 
-where the e&#8407;<sub>ij</sub> are unit vectors between the atoms, e.g.,
+where the e<sub>ij</sub> are unit vectors between the atoms, e.g.,
 
 <img src="./figures/unit-vectors.png" width="600">
 
