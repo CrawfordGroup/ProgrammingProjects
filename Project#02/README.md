@@ -1,12 +1,12 @@
 # Project #2: Harmonic Vibrational Analysis
 
-The purpose of this project is to extend your fundamental C-language programming techniques through a normal coordinate/harmonic vibrational frequency calculation. The theoretical background and a concise set of instructions for this project may be found [here](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/project2-instructions.pdf)
+The purpose of this project is to extend your fundamental C-language programming techniques through a normal coordinate/harmonic vibrational frequency calculation. The theoretical background and a concise set of instructions for this project may be found [here](./project2-instructions.pdf)
 
 We thank Dr. Yukio Yamaguchi of the University of Georgia for the original version of this project.
 
 ## Step 1: Read the Coordinate Data
 
-The coordinate data are given in a format identical to that for [Project#1](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301). The test case
+The coordinate data are given in a format identical to that for [Project#1](../Project%2301). The test case
 for the remainder of this project is the water molecule, optimized at the SCF/DZP level of theory. You can find the coordinates (in bohr) in the input directory.
 
 ## Step 2: Read the Cartesian Hessian Data
