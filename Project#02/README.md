@@ -14,27 +14,13 @@ for the remainder of this project is the water molecule, optimized at the SCF/DZ
 The primary input data for the harmonic vibrational calculation is the Hessian matrix,
 which consists of second derivatives of the energy with respect to atomic positions.
 
-```
-EQUATION
-F_{ij} = \frac{\partial^{2}V}{\partial q_i \partial q_j}
-```
+<img src="./figures/hessian.png" height="40">
+
 The Hessian matrix (in units of E<sub>h</sub>/a<sub>0</sub><sup>2</sup>) can be downloaded [here](./input/h2o_hessian.txt) for the H<sub>2</sub>O test case. 
 The first integer in the file is the number of atoms (which you should compare to the corresponding value from the geometry file as a test of consistency), 
 while the remaining values have the following format:
 
-```
-EQUATION
-\begin{array}{ccc}
-F_{x_1,x_1} & F_{x_1,y_1} & F_{x_1,z_1} \\
-F_{x_1,x_2} & F_{x_1,y_2} & F_{x_1,z_2} \\
-& \\
-\ldots  & \ldots & \dots \\
-& \\
-F_{x_2,x_1} & F_{x_2,y_1} & F_{x_2,z_1} \\
-& \\
-\ldots & \ldots & \ldots \\
-\end{array}
-```
+<img src="./figures/hessian-file-format.png" width="100">
 
  * [Hint 1](./hints/hint1.md): Reading the Hessian
 
@@ -42,11 +28,8 @@ F_{x_2,x_1} & F_{x_2,y_1} & F_{x_2,z_1} \\
 
 Divide each element of the Hessian matrix by the product of square-roots of the masses of the atoms associated with the given coordinates:
 
-```
-EQUATION
-F^{M}_{ij} = \frac{F_{ij}}{\sqrt{m_i m_j}}
+<img src="./figures/mass-weighted-hessian.png" height="40">
 
-```
 where m<sub>i</sub> represents the mass of the atom corresponding to atom *i*. Use atomic mass units (amu) for the masses, just as 
 for [Project #1](../Project%2301).
 
@@ -56,11 +39,7 @@ for [Project #1](../Project%2301).
 
 Compute the eigenvalues of the mass-weighted Hessian:
 
-```
- EQUATION
-
- F^{M}\mathbf{L} = \mathbf{L}\Lambda
-```
+<img src="./figures/diag-mass-weighted-hessian.png" height="40">
 
 You should consider using the same canned diagonalization function 
 you used in [Project #1](../Project%2301).
@@ -71,6 +50,7 @@ you used in [Project #1](../Project%2301).
 
 The vibrational frequencies are proportional to the squareroot of the eigenvalues of the mass-weighted Hessian:
 
+<img src="./figures/vib-freq.png" height="40">
 ```
 EQUATION
 \omega_{i}= {\rm_constant} \times \sqrt{\lambda_i}
