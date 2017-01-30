@@ -4,27 +4,27 @@ The purpose of this project is to provide a deeper understanding of Hartree-Fock
 demonstrating a simple implementation of the self-consistent-field method. 
 The theoretical background can be found in Ch. 3 of the text by Szabo and Ostlund or in the 
 [nice set of on-line notes](http://vergil.chemistry.gatech.edu/notes/hf-intro/hf-intro.html) written by David Sherrill.
-A concise set of instructions for this project may be found [here](http://sirius.chem.vt.edu/~crawdad/programming/scf.pdf).
+A concise set of instructions for this project may be found [here](./project3-instructions.pdf).
 
 We thank Dr. Yukio Yamaguchi of the University of Georgia for the original version of this project.
 
 The test case used in the following discussion is for a water molecule with a bond-length of 1.1 <html>&Aring;</html> 
 and a bond angle of 104.0<sup>o</sup> with an STO-3G basis set.  The input to the project consists of the 
-[nuclear repulsion energy](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/enuc.dat)
+[nuclear repulsion energy](./input/h2o/STO-3G/enuc.dat)
    and pre-computed sets of one- and two-electron integrals: 
-[overlap integrals](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/S.dat)
-[kinetic-energy integrals](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/T.dat)
-[nuclear-attraction integrals](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/V.dat)
-[electron-electron repulsion integrals](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/eri.dat)
+[overlap integrals](./input/h2o/STO-3G/s.dat)
+[kinetic-energy integrals](./input/h2o/STO-3G/t.dat)
+[nuclear-attraction integrals](./input/h2o/STO-3G/v.dat)
+[electron-electron repulsion integrals](./input/h2o/STO-3G/eri.dat)
 
 
 ## Step 1: Nuclear Repulsion Energy
 
-Read the nuclear repulsion energy from the [enuc.dat](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/enuc.dat)
+Read the nuclear repulsion energy from the [enuc.dat](./input/h2o/STO-3G/enuc.dat)
 
 ## Step 2: One-Electron Integrals
 
-Read the AO-basis [overlap](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/S.dat)
+Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 
 ```
 EQUATION
@@ -32,7 +32,7 @@ S_{\mu \nu} \equiv \int \phi_\mu({\mathbf r}) \phi_{\nu}({\mathbf
   r}) d{\mathbf r}
 ```
 
-[kinetic-energy](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/T.dat)
+[kinetic-energy](./input/h2o/STO-3G/t.dat)
 
 ```
 EQUATION 
@@ -40,7 +40,7 @@ T_{\mu \nu} \equiv \int \phi_\mu({\mathbf r}) \left( -\frac{1}{2}
   \nabla^2_{\mathbf r} \right) \phi_\nu({\mathbf r}) d{\mathbf r}
 ```
 
-[nuclear-attraction integrals](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/V.dat)
+[nuclear-attraction integrals](./input/h2o/STO-3G/v.dat)
 
 ```
 EQUATION 
@@ -58,12 +58,12 @@ H^{\rm core}_{\mu \nu} = T_{\mu \nu} + V_{\mu \nu}.
 Note that the one-electron integrals provided include only the *permutationally unique* integrals, but you should store the full matrices for convenience.  
 Note also that the AO indices on the integrals in the files start with "1" rather than "0".
 
- * Hint: Core Hamiltonian
+ * [Hint 1](./hints/hint2-1.md): Core Hamiltonian
 
 ## Step #3: Two-Electron Integrals
 
 Read the two-electron repulsion integrals from the 
-[eri](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/eri.dat) 
+[eri.dat](./input/h2o/STO-3G/eri.dat) 
 file.
 The integrals in this file are provided in Mulliken notation over real AO basis functions:
 
@@ -96,15 +96,15 @@ EQUATION
 \lambda(\lambda+1)/2 + \sigma.
 ```
 Note that the two-electron integrals may be stored efficiently in a one-dimensional array and the above relationship used to map between given 
-<latex>\mu</latex>, <latex>\nu</latex>, <latex>\lambda</latex>, and <latex>\sigma</latex> indices and a "compound index" defined as:
+&mu;, &nu;, &lambda;, and &sigma; indices and a "compound index" defined as:
 
 ```
 EQUATION
 \mu\nu\lambda\sigma \equiv \mu\nu(\mu\nu+1)/2 + \lambda\sigma.
 ```
-  * Hint 1: Compound indices
-  * Hint 2: Pre-Computed Lookup Arrays
-  * Hint 3: Reading the two-electron integrals
+  * [Hint 1](./hints/hint3-1.md): Compound indices
+  * [Hint 2](./hints/hint3-2.md): Pre-Computed Lookup Arrays
+  * [Hint 3](./hints/hint3-3.md): Reading the two-electron integrals
 
 
 ## Step 4: Build the Orthogonalization Matrix
@@ -115,7 +115,7 @@ Diagonalize the overlap matrix:
 EQUATION
 {\mathbf S} {\mathbf L}_S = {\mathbf L}_S \Lambda_S,
 ```
-where <latex>{\mathbf L}_S</latex> is the matrix of eigenvectors (columns) and <latex>\Lambda_S</latex> is the diagonal matrix of corresponding eigenvalues.
+where L<sub>S</sub> is the matrix of eigenvectors (columns) and &Lambda;<sub>S</sub> is the diagonal matrix of corresponding eigenvalues.
 
 Build the symmetric orthogonalization matrix using:
 
@@ -125,7 +125,7 @@ EQUATION
 ```
 where the tilde denotes the matrix transpose.
 
-  * Hint 1: S<sup>-1/2</sup> Matrix
+  * [Hint 1](./hints/hint4-1.md): S<sup>-1/2</sup> Matrix
 
 
 ## Step 5: Build the Initial Guess Density
@@ -142,7 +142,7 @@ Diagonalize the Fock matrix:
 EQUATION
 {\mathbf F}'_0 {\mathbf C}'_0 = {\mathbf C}'_0 \epsilon_0.
 ```
-Note that the <latex>\epsilon_0</latex> matrix contains the initial orbital energies.
+Note that the &epsilon;<sub>0</sub> matrix contains the initial orbital energies.
 
 Transform the eigenvectors into the original (non-orthogonal) AO basis:
 
@@ -158,9 +158,9 @@ D^0_{\mu\nu} = \sum_m^{\rm occ.} \left( {\mathbf C}_0 \right )_\mu^m \left( {\ma
 ```
 where *m* indexes the columns of the coefficient matrices, and the summation includes only the occupied spatial MOs.
 
-  * Hint 1: Transformed Fock matrix
-  * Hint 2: Initial MO Coefficients
-  * Hint 3: Initial Density Matrix
+  * [Hint 1](./hints/hint5-1.md): Transformed Fock matrix
+  * [Hint 2](./hints/hint5-2.md): Initial MO Coefficients
+  * [Hint 3](./hints/hint5-3.md): Initial Density Matrix
 
 ## Step 6: Compute the Inital SCF Energy
 
@@ -180,7 +180,7 @@ E^0_{\rm total} = E^0_{\rm elec} + E_{\rm nuc},
 
 where *0* denotes the initial SCF energy.
 
- * Hint 1: Initial Electronic Energy
+ * [Hint 1](./hints/hint6-1.md): Initial Electronic Energy
 
 ## Step #7: Compute the New Fock Matrix 
 
@@ -192,8 +192,9 @@ F_{\mu\nu} = H^{\rm core}_{\mu\nu} + \sum_{\lambda\sigma}^{\rm AO} D^{i-1}_{\lam
 ```
 where the double-summation runs over all the AOs and *i-1* denotes the density for the last iteration.
 
-  * Hint 1: New Fock Matrix
-  * Hint 2: Fock-Build Code
+  * [Hint 1](./hints/hint7-1.md): New Fock Matrix
+  * [Hint 2](./hints/hint7-2.md): Fock-Build Code
+
 ## Step #8: Build the New Density Matrix 
 
 Form the new density matrix following the same procedure as in Step #5 above:
@@ -250,7 +251,7 @@ EQUATION
 ```
 If the difference in consecutive SCF energy and the root-mean-squared difference in consecutive densities do not fall below the prescribed thresholds, return to Step #7 and continue from there.
 
-  * Hint 1: Energies for Each Iteration
+  * [Hint 1](./hints/hint10-1.md): Energies for Each Iteration
 
 ## Additional Concepts
 ###  The MO-Basis Fock Matrix
@@ -298,7 +299,7 @@ q_A = Z_A - 2 \sum_{\mu \in A} ({\mathbf D S})_{\mu\mu},
 ```
 where the summation is limited to only those basis functions centered on atom *A*.
 ## Test Cases
- * STO-3G Water [Geometry](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/geom.dat) |[Enuc](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/enuc.dat) |[S](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/S.dat) |[T](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/T.dat) |[V](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/V.dat) |[ERI](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/eri.dat) |[Mu_X](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/mux.dat) |[Mu_Y](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/muy.dat) |[Mu_Z](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/STO-3G/muz.dat) |[output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/output/sto3g_h2o/output.dat)
- *  DZ Water [Geometry](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/geom.dat) |[Enuc](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/enuc.dat) |[S](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/S.dat) |[T](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/T.dat) |[V](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/V.dat) |[ERI](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/eri.dat) |[Mu_X](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/mux.dat) |[Mu_Y](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/muy.dat) |[Mu_Z](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZ/muz.dat) |[output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/output/dz_h2o/output.dat)
- *  DZP Water [Geometry](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/geom.dat) |[Enuc](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/enuc.dat) |[S](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/S.dat) |[T](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/T.dat) |[V](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/V.dat) |[ERI](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/eri.dat) |[Mu_X](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/mux.dat) |[Mu_Y](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/muy.dat) |[Mu_Z](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/h2o/DZP/muz.dat) |[output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/output/dzp_h2o/output.dat)
- *  STO-3G Methane [Geometry](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/geom.dat) |[Enuc](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/enuc.dat) |[S](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/S.dat) |[T](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/T.dat) |[V](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/V.dat) |[ERI](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/eri.dat) |[Mu_X](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/mux.dat) |[Mu_Y](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/muy.dat) |[Mu_Z](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/input/ch4/STO-3G/muz.dat) |[output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2303/output/sto3g_ch4/output.dat)
+ * STO-3G Water [Geometry](./input/h2o/STO-3G/geom.dat) |[Enuc](./input/h2o/STO-3G/enuc.dat) |[S](./input/h2o/STO-3G/s.dat) |[T](./input/h2o/STO-3G/t.dat) |[V](./input/h2o/STO-3G/v.dat) |[ERI](./input/h2o/STO-3G/eri.dat) |[Mu_X](./input/h2o/STO-3G/mux.dat) |[Mu_Y](./input/h2o/STO-3G/muy.dat) |[Mu_Z](./input/h2o/STO-3G/muz.dat) |[output](./output/sto3g_h2o/output.dat)
+ *  DZ Water [Geometry](./input/h2o/DZ/geom.dat) |[Enuc](./input/h2o/DZ/enuc.dat) |[S](./input/h2o/DZ/s.dat) |[T](./input/h2o/DZ/t.dat) |[V](./input/h2o/DZ/v.dat) |[ERI](./input/h2o/DZ/eri.dat) |[Mu_X](./input/h2o/DZ/mux.dat) |[Mu_Y](./input/h2o/DZ/muy.dat) |[Mu_Z](./input/h2o/DZ/muz.dat) |[output](./output/dz_h2o/output.dat)
+ *  DZP Water [Geometry](./input/h2o/DZP/geom.dat) |[Enuc](./input/h2o/DZP/enuc.dat) |[S](./input/h2o/DZP/s.dat) |[T](./input/h2o/DZP/t.dat) |[V](./input/h2o/DZP/v.dat) |[ERI](./input/h2o/DZP/eri.dat) |[Mu_X](./input/h2o/DZP/mux.dat) |[Mu_Y](./input/h2o/DZP/muy.dat) |[Mu_Z](./input/h2o/DZP/muz.dat) |[output](./output/dzp_h2o/output.dat)
+ *  STO-3G Methane [Geometry](./input/ch4/STO-3G/geom.dat) |[Enuc](./input/ch4/STO-3G/enuc.dat) |[S](./input/ch4/STO-3G/s.dat) |[T](./input/ch4/STO-3G/t.dat) |[V](./input/ch4/STO-3G/v.dat) |[ERI](./input/ch4/STO-3G/eri.dat) |[Mu_X](./input/ch4/STO-3G/mux.dat) |[Mu_Y](./input/ch4/STO-3G/muy.dat) |[Mu_Z](./input/ch4/STO-3G/muz.dat) |[output](./output/sto3g_ch4/output.dat)
