@@ -48,7 +48,7 @@ F^{M}_{ij} = \frac{F_{ij}}{\sqrt{m_i m_j}}
 
 ```
 where m<sub>i</sub> represents the mass of the atom corresponding to atom *i*. Use atomic mass units (amu) for the masses, just as 
-for [Project #1](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301).
+for [Project #1](../Project%2301).
 
  * Hint 2: Solution
 
@@ -63,7 +63,7 @@ Compute the eigenvalues of the mass-weighted Hessian:
 ```
 
 You should consider using the same canned diagonalization function 
-you used in [Project #1](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2301).
+you used in [Project #1](../Project%2301).
 
  * Hint 3: Solution
 
@@ -85,12 +85,12 @@ E.B. Willson, J.C. Decius, and P.C. Cross, *Molecular Vibrations*, McGraw-Hill, 
 
 ## Test Cases
 
- * Water: [Coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/h2o_geom.txt) 
- | [Hessian](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/h2o_hessian.txt) 
- | [Output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/output/h2o_vib_out.txt)
- * Benzene: [Coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/benzene_geom.txt) 
- | [Hessian](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/benzene_hessian.txt) 
- | [Output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/output/benzene_vib_out.txt)
- * 3-chloro-1-butene: [Coordinates](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/3c1b_geom.txt) 
- | [Hessian](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/3c1b_hessian.txt) 
- | [Output](https://github.com/CrawfordGroup/ProgrammingProjects/blob/master/Project%2302/input/3c1b_vib_out.txt)
+ * Water: [Coordinates](../h2o_geom.txt) 
+ | [Hessian](../input/h2o_hessian.txt) 
+ | [Output](../output/h2o_vib_out.txt)
+ * Benzene: [Coordinates](../input/benzene_geom.txt) 
+ | [Hessian](../input/benzene_hessian.txt) 
+ | [Output](../output/benzene_vib_out.txt)
+ * 3-chloro-1-butene: [Coordinates](../input/3c1b_geom.txt) 
+ | [Hessian](../input/3c1b_hessian.txt) 
+ | [Output](../input/3c1b_vib_out.txt)
