@@ -93,4 +93,4 @@ E.B. Willson, J.C. Decius, and P.C. Cross, __Molecular Vibrations__, McGraw-Hill
  | [Output](./output/benzene_vib_out.txt)
  * 3-chloro-1-butene: [Coordinates](./input/3c1b_geom.txt) 
  | [Hessian](./input/3c1b_hessian.txt) 
- | [Output](./input/3c1b_vib_out.txt)
+ | [Output](./output/3c1b_vib_out.txt)
