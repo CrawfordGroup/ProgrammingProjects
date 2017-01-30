@@ -1,4 +1,4 @@
-The harmonic vibrational frequencies for the H2O test case (in cm<sup>-1</sup>) are:
+The harmonic vibrational frequencies for the H<sub>2</sub>O test case (in cm<sup>-1</sup>) are:
 ```
    8 2492.7600
    7 2359.6522

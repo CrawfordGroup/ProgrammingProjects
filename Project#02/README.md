@@ -50,7 +50,7 @@ F^{M}_{ij} = \frac{F_{ij}}{\sqrt{m_i m_j}}
 where m<sub>i</sub> represents the mass of the atom corresponding to atom *i*. Use atomic mass units (amu) for the masses, just as 
 for [Project #1](../Project%2301).
 
- * [Hint 2](./hints/hint2.md) 2: Solution
+ * [Hint 2](./hints/hint2.md): Solution
 
 ## Step 4: Diagonalize the Mass-Weighted Hessian Matrix
 

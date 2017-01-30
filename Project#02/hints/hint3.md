@@ -1,4 +1,4 @@
-The eigenvalues of the mass-weighted Hessian for the H2O test case (in atomic units) are:
+The eigenvalues of the mass-weighted Hessian for the H<sub>2</sub>O test case (in atomic units) are:
 ```
    8         0.2351542439
    7         0.2107113210

@@ -1,4 +1,4 @@
-For the H2O test case, the 9×9 mass-weighted Hessian is:
+For the H<sub>2</sub>O test case, the 9×9 mass-weighted Hessian is:
 ```
            1           2           3           4           5           6           7           8           9
 
