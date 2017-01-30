@@ -87,7 +87,7 @@ E.B. Willson, J.C. Decius, and P.C. Cross, __Molecular Vibrations__, McGraw-Hill
 
  * Water: [Coordinates](./input/h2o_geom.txt) 
  | [Hessian](./input/h2o_hessian.txt) 
- | [Output](./output/h2o_vib_out.txt) (see the note at the bottom of [Hint 4](./hints/hint4.md)
+ | [Output](./output/h2o_vib_out.txt) (see the note at the bottom of [Hint 4](./hints/hint4.md))
  * Benzene: [Coordinates](./input/benzene_geom.txt) 
  | [Hessian](./input/benzene_hessian.txt) 
  | [Output](./output/benzene_vib_out.txt)
