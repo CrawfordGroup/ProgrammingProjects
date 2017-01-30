@@ -36,7 +36,7 @@ F_{x_2,x_1} & F_{x_2,y_1} & F_{x_2,z_1} \\
 \end{array}
 ```
 
- * [Hint 1](./hints/hint2-1.md): Reading the Hessian
+ * [Hint 1](./hints/hint1.md): Reading the Hessian
 
 ## Step 3: Mass-Weight the Hessian Matrix
 
@@ -50,7 +50,7 @@ F^{M}_{ij} = \frac{F_{ij}}{\sqrt{m_i m_j}}
 where m<sub>i</sub> represents the mass of the atom corresponding to atom *i*. Use atomic mass units (amu) for the masses, just as 
 for [Project #1](../Project%2301).
 
- * [Hint](./hints/hint2-2.md) 2: Solution
+ * [Hint 2](./hints/hint2.md) 2: Solution
 
 ## Step 4: Diagonalize the Mass-Weighted Hessian Matrix
 
@@ -65,7 +65,7 @@ Compute the eigenvalues of the mass-weighted Hessian:
 You should consider using the same canned diagonalization function 
 you used in [Project #1](../Project%2301).
 
- * [Hint 3](./hints/hint2-3.md): Solution
+ * [Hint 3](./hints/hint3.md): Solution
 
 ## Step 5: Compute the Harmonic Vibrational Frequencies
 
@@ -78,7 +78,7 @@ EQUATION
 
 The most common units to use for vibrational frequencies is cm<sup>-1</sup>.
 
- * [Hint 4](./hints/hint2-4.md): Solution
+ * [Hint 4](./hints/hint4.md): Solution
 
 ## Reference
 E.B. Willson, J.C. Decius, and P.C. Cross, __Molecular Vibrations__, McGraw-Hill, 1955.
