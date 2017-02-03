@@ -38,7 +38,7 @@ Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 
 and store them in appropriately constructed matrices.  Then form the "core Hamiltonian":
 
-<img src="./figures/core-hamiltonian.png" height="50">
+<img src="./figures/core-hamiltonian.png" height="30">
 
 Note that the one-electron integrals provided include only the *permutationally unique* integrals, but you should store the full matrices for convenience.  
 Note also that the AO indices on the integrals in the files start with "1" rather than "0".
@@ -52,20 +52,20 @@ Read the two-electron repulsion integrals from the
 file.
 The integrals in this file are provided in Mulliken notation over real AO basis functions:
 
-<img src="./figures/eri.png" height="50">
+<img src="./figures/eri.png" height="40">
 Hence, the integrals obey the eight-fold permutational symmetry relationships:
 
-<img src="./figures/permutational-symmetry.png" height="50">
+<img src="./figures/permutational-symmetry.png" height="30">
 and only the permutationally unique integrals are provided in the file, with the restriction that, for each integral, the following relationships hold:
 
-<img src="./figures/index-restrictions.png" height="50">
+<img src="./figures/index-restrictions.png" height="25">
 where
 
-<img src="./figures/compound-index-restrictions.png" height="50">
+<img src="./figures/compound-index-restrictions.png" height="25">
 Note that the two-electron integrals may be stored efficiently in a one-dimensional array and the above relationship used to map between given 
 &mu;, &nu;, &lambda;, and &sigma; indices and a "compound index" defined as:
 
-<img src="./figures/compound-index-restrictions2.png" height="50">
+<img src="./figures/compound-index-restrictions2.png" height="25">
   * [Hint 1](./hints/hint3-1.md): Compound indices
   * [Hint 2](./hints/hint3-2.md): Pre-Computed Lookup Arrays
   * [Hint 3](./hints/hint3-3.md): Reading the two-electron integrals
@@ -75,16 +75,12 @@ Note that the two-electron integrals may be stored efficiently in a one-dimensio
 
 Diagonalize the overlap matrix:
 
-<img src="./figures/diag-mw-hessian.png" height="50">
+<img src="./figures/diag-mw-hessian.png" height="25">
 where L<sub>S</sub> is the matrix of eigenvectors (columns) and &Lambda;<sub>S</sub> is the diagonal matrix of corresponding eigenvalues.
 
 Build the symmetric orthogonalization matrix using:
 
-<img src="./figures/symm-orthog-matrix.png" height="50">
-```
-EQUATION
-{\mathbf S}^{-1/2} \equiv {\mathbf L}_S \Lambda^{-1/2} {\mathbf {\tilde L}}_S,
-```
+<img src="./figures/symm-orthog-matrix.png" height="25">
 where the tilde denotes the matrix transpose.
 
   * [Hint 1](./hints/hint4-1.md): S<sup>-1/2</sup> Matrix
@@ -94,18 +90,22 @@ where the tilde denotes the matrix transpose.
 
 Form an initial (guess) Fock matrix in the orthonormal AO basis using the core Hamiltonian as a guess:
 
-<img src="./figures/initial-fock.png" height="50">
+<img src="./figures/initial-fock.png" height="25">
+
 Diagonalize the Fock matrix:
 
-<img src="./figures/diag-fock.png" height="50">
+<img src="./figures/diag-fock.png" height="25">
+
 Note that the &epsilon;<sub>0</sub> matrix contains the initial orbital energies.
 
 Transform the eigenvectors into the original (non-orthogonal) AO basis:
 
-<img src="./figures/transform-coeff.png" height="50">
+<img src="./figures/transform-coeff.png" height="25">
+
 Build the density matrix using the occupied MOs:
 
 <img src="./figures/density-matrix.png" height="50">
+
 where *m* indexes the columns of the coefficient matrices, and the summation includes only the occupied spatial MOs.
 
   * [Hint 1](./hints/hint5-1.md): Transformed Fock matrix
@@ -114,13 +114,13 @@ where *m* indexes the columns of the coefficient matrices, and the summation inc
 
 ## Step 6: Compute the Inital SCF Energy
 
-CF electronic energy may be computed using the density matrix as:
+The SCF electronic energy may be computed using the density matrix as:
 
-<img src="./figures/initial-scf-energy.png" height="50">
+<img src="./figures/initial-scf-energy.png" height="60">
 
 The total energy is the sum of the electronic energy and the nuclear repulsion energy:
 
-<img src="./figures/initial-total-energy.png" height="50">
+<img src="./figures/initial-total-energy.png" height="30">
 
 where *0* denotes the initial SCF energy.
 
@@ -130,7 +130,8 @@ where *0* denotes the initial SCF energy.
 
 Start the SCF iterative procedure by building a new Fock matrix using the previous iteration's density as:
 
-<img src="./figures/new-fock.png" height="50">
+<img src="./figures/new-fock.png" height="60">
+
 where the double-summation runs over all the AOs and *i-1* denotes the density for the last iteration.
 
   * [Hint 1](./hints/hint7-1.md): New Fock Matrix
@@ -141,29 +142,30 @@ where the double-summation runs over all the AOs and *i-1* denotes the density f
 Form the new density matrix following the same procedure as in Step #5 above:
 
 Orthogonalize:
-<img src="./figures/orthog-fock.png" height="50">
+<img src="./figures/orthog-fock.png" height="25">
+
 Diagonalize:
+<img src="./figures/diag-new-fock.png" height="25">
 
-<img src="./figures/diag-new-fock.png" height="50">
 Back-transform:
+<img src="./figures/back-transform-coeff.png" height="25">
 
-<img src="./figures/back-transform-coeff.png" height="50">
 Compute the density:
+<img src="./figures/compute-density.png" height="60">
 
-<img src="./figures/compute-density.png" height="50">
 where *i* denotes the current iteration density.
 
 ## Step #9: Compute the New SCF Energy 
 
 Compute the new SCF energy as before:
+<img src="./figures/compute-new-scf-energy.png" height="100">
 
-<img src="./figures/compute-new-scf-energy.png" height="50">
 where *i* denotes the SCF energy for the *i*th iteration.
 
 ## Step #10: Test for Convergence 
 Test both the energy and the density for convergence:
 
-<img src="./figures/convergence-test.png" height="50">
+<img src="./figures/convergence-test.png" height="100">
 
 If the difference in consecutive SCF energy and the root-mean-squared difference in consecutive densities do not fall below the prescribed thresholds, return to Step #7 and continue from there.
 
@@ -173,19 +175,23 @@ If the difference in consecutive SCF energy and the root-mean-squared difference
 ###  The MO-Basis Fock Matrix
 At convergence, the canonical Hartree-Fock MOs are, by definition, eigenfunctions of the Fock operator, viz.
 
-<img src="./figures/canonical-mos.png" height="50">
+<img src="./figures/canonical-mos.png" height="30">
+
 If we multiply on the left by an arbitrary MO and integrate, we obtain:
 
-<img src="./figures/mo-fock-matrix-element.png" height="50">
+<img src="./figures/mo-fock-matrix-element.png" height="30">
+
 In other words, the Fock matrix should be diagonal in the MO basis, with the orbital energies as its diagonal elements.  We can demonstrate this explicitly using the AO-basis Fock matrix by first re-writing the above expression using the LCAO-MO coefficients:
 
 <img src="./figures/mo-fock-matrix.png" height="50">
+
 Use the above equation to transform the Fock matrix from the AO basis to the MO basis and demonstrate that it is indeed diagonal (to within the convergence limits of the SCF iterative procedure).
 
 ### One-Electron Properties 
 As discussed in detail in Ch. 3 of the text by Szabo and Ostlund, the calculation of one-electron properties requires density matrix and the relevant property integrals.  The electronic contribution to the electric-dipole moment may be computed using,
 
 <img src="./figures/electric-dipole-moment.png" height="50">
+
 where the vector notation implies three sets of dipole-moment integrals -- one for each Cartesian component of the dipole operator.
 
 Two points to note:
@@ -198,6 +204,7 @@ The test cases provided below include the structural information dipole integral
 A Mulliken population analysis (also described in Szabo & Ostlund, Ch. 3) requires the overlap integrals and the electron density, in addition to information about the number of basis functions centered on each atom.  The charge on atom *A* may be computed as:
 
 <img src="./figures/atomic-charge.png" height="50">
+
 where the summation is limited to only those basis functions centered on atom *A*.
 
 ## Test Cases
