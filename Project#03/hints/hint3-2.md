@@ -4,7 +4,7 @@ If you've written your program so that the two-electron integrals are stored in 
 
 We calculate these above values from the raw row and column indices, *i* and *j*, respectively using:
 
-<img src="../figures/ioff-compound-index2.png" height="60">
+<img src="../figures/ioff-compound-index2.png" height="70">
 
 The expensive part of the above expression is the repeated evaluation of the *i(i+1)/2* and *j(j+1)/2* parts (which correspond to the first column of numbers in the above matrix).  However, if we were to build an integer array (named `ioff`, for example) to store these values, then we could simplify the task to use array look-ups instead:
 ```c++

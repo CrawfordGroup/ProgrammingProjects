@@ -9,7 +9,7 @@ The total number of elements in the lower triangle is *M = n(n+1)/2*.  We could 
 
 How do we translate row (*i*) and column (*j*) indices of the matrix to the position in the linear array (*ij*)?
 
-<img src="../figures/ioff-compound-index.png" height="60">
+<img src="../figures/ioff-compound-index.png" height="70">
 
 Here's a code block to calculate the compound index using a standard [if-then-else conditional](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Control-Statements):
 ```c++
@@ -32,4 +32,4 @@ The eight-fold permutational symmetry of the two-electron repulsion integrals ca
 
 Thus, just as for the two-dimensional case above, we only need to store the lower triangle of this matrix, and a one-dimensional array of length *M(M+1)/2* will do the trick.  Given four AO indices, *i*, *j*, *k*, and *l* corresponding to the integral, (ij|kl), we can translate these into compound row (*ij*) and column (*kl*) indices using the expression above, as well as the final compound index:
 
-<img src="../figures/ioff-final-compound-index.png" height="60">
+<img src="../figures/ioff-final-compound-index.png" height="70">
