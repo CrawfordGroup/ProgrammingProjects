@@ -26,34 +26,19 @@ Read the nuclear repulsion energy from the [enuc.dat](./input/h2o/STO-3G/enuc.da
 
 Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 
-```
-EQUATION
-S_{\mu \nu} \equiv \int \phi_\mu({\mathbf r}) \phi_{\nu}({\mathbf
-  r}) d{\mathbf r}
-```
+<img src="./figures/overlap.png" height="50">
 
 [kinetic-energy](./input/h2o/STO-3G/t.dat)
 
-```
-EQUATION 
-T_{\mu \nu} \equiv \int \phi_\mu({\mathbf r}) \left( -\frac{1}{2}
-  \nabla^2_{\mathbf r} \right) \phi_\nu({\mathbf r}) d{\mathbf r}
-```
+<img src="./figures/kinetic-energy.png" height="50">
 
 [nuclear-attraction integrals](./input/h2o/STO-3G/v.dat)
 
-```
-EQUATION 
-V_{\mu \nu} \equiv \int \phi_\mu({\mathbf r}) \left( -\sum_A^N
-\frac{Z}{r_A} \right) \phi_\nu({\mathbf r}) d{\mathbf r},
-```
+<img src="./figures/nuclear-attraction.png" height="50">
 
 and store them in appropriately constructed matrices.  Then form the "core Hamiltonian":
 
-```
-EQUATION 
-H^{\rm core}_{\mu \nu} = T_{\mu \nu} + V_{\mu \nu}.
-```
+<img src="./figures/core-hamiltonian.png" height="50">
 
 Note that the one-electron integrals provided include only the *permutationally unique* integrals, but you should store the full matrices for convenience.  
 Note also that the AO indices on the integrals in the files start with "1" rather than "0".
@@ -67,41 +52,20 @@ Read the two-electron repulsion integrals from the
 file.
 The integrals in this file are provided in Mulliken notation over real AO basis functions:
 
-```
-EQUATION
-(\mu \nu | \lambda \sigma) \equiv \int \phi_\mu({\mathbf r}_1)
-\phi_\nu({\mathbf r}_1) r_{12}^{-1} \phi_\lambda({\mathbf r}_2)
-\phi_\sigma({\mathbf r}_2) d{\mathbf r}_1 d{\mathbf r}_2.
-```
+<img src="./figures/eri.png" height="50">
 Hence, the integrals obey the eight-fold permutational symmetry relationships:
 
-```
-EQUATION
-  (\mu \nu | \lambda \sigma) = (\nu \mu | \lambda \sigma) = (\mu \nu
-  | \sigma \lambda ) = (\nu \mu | \sigma \lambda) =  (\lambda \sigma | \mu \nu) = (\sigma \lambda | \mu \nu) =
-  (\lambda \sigma | \nu \mu) = (\sigma \lambda | \nu \mu),
-```
+<img src="./figures/permutational-symmetry.png" height="50">
 and only the permutationally unique integrals are provided in the file, with the restriction that, for each integral, the following relationships hold:
 
-```
-EQUATION
-\mu \geq \nu,\ \ \ \ \ \lambda \geq \sigma,\ \ \ \ \ \ {\rm and}\ \ \ \
-\ \ \mu\nu \geq \lambda\sigma,
-```
+<img src="./figures/index-restrictions.png" height="50">
 where
 
-```
-EQUATION
-\mu\nu \equiv \mu(\mu+1)/2 + \nu\ \ \ \ \ \ {\rm and} \ \ \ \ \ \ \lambda\sigma \equiv
-\lambda(\lambda+1)/2 + \sigma.
-```
+<img src="./figures/compound-index-restrictions.png" height="50">
 Note that the two-electron integrals may be stored efficiently in a one-dimensional array and the above relationship used to map between given 
 &mu;, &nu;, &lambda;, and &sigma; indices and a "compound index" defined as:
 
-```
-EQUATION
-\mu\nu\lambda\sigma \equiv \mu\nu(\mu\nu+1)/2 + \lambda\sigma.
-```
+<img src="./figures/compound-index-restrictions2.png" height="50">
   * [Hint 1](./hints/hint3-1.md): Compound indices
   * [Hint 2](./hints/hint3-2.md): Pre-Computed Lookup Arrays
   * [Hint 3](./hints/hint3-3.md): Reading the two-electron integrals
@@ -111,14 +75,12 @@ EQUATION
 
 Diagonalize the overlap matrix:
 
-```
-EQUATION
-{\mathbf S} {\mathbf L}_S = {\mathbf L}_S \Lambda_S,
-```
+<img src="./figures/diag-mw-hessian.png" height="50">
 where L<sub>S</sub> is the matrix of eigenvectors (columns) and &Lambda;<sub>S</sub> is the diagonal matrix of corresponding eigenvalues.
 
 Build the symmetric orthogonalization matrix using:
 
+<img src="./figures/symm-orthog-matrix.png" height="50">
 ```
 EQUATION
 {\mathbf S}^{-1/2} \equiv {\mathbf L}_S \Lambda^{-1/2} {\mathbf {\tilde L}}_S,
@@ -132,30 +94,18 @@ where the tilde denotes the matrix transpose.
 
 Form an initial (guess) Fock matrix in the orthonormal AO basis using the core Hamiltonian as a guess:
 
-```
-EQUATION
-{\mathbf F}'_0 \equiv {\mathbf {\tilde S}}^{-1/2} {\mathbf H}^{\rm core} {\mathbf S}^{-1/2}
-```
+<img src="./figures/initial-fock.png" height="50">
 Diagonalize the Fock matrix:
 
-```
-EQUATION
-{\mathbf F}'_0 {\mathbf C}'_0 = {\mathbf C}'_0 \epsilon_0.
-```
+<img src="./figures/diag-fock.png" height="50">
 Note that the &epsilon;<sub>0</sub> matrix contains the initial orbital energies.
 
 Transform the eigenvectors into the original (non-orthogonal) AO basis:
 
-```
-EQUATION
-{\mathbf C_0} = {\mathbf S}^{-1/2} {\mathbf C}'_0
-```
+<img src="./figures/transform-coeff.png" height="50">
 Build the density matrix using the occupied MOs:
 
-```
-EQUATION
-D^0_{\mu\nu} = \sum_m^{\rm occ.} \left( {\mathbf C}_0 \right )_\mu^m \left( {\mathbf C}_0 \right )_\nu^m,
-```
+<img src="./figures/density-matrix.png" height="50">
 where *m* indexes the columns of the coefficient matrices, and the summation includes only the occupied spatial MOs.
 
   * [Hint 1](./hints/hint5-1.md): Transformed Fock matrix
@@ -166,17 +116,11 @@ where *m* indexes the columns of the coefficient matrices, and the summation inc
 
 CF electronic energy may be computed using the density matrix as:
 
-```
-EQUATION
-E^0_{\rm elec} = \sum_{\mu\nu}^{\rm AO} D^0_{\mu\nu} \left( H^{\rm core}_{\mu\nu} + F_{\mu\nu} \right )
-```
+<img src="./figures/initial-scf-energy.png" height="50">
 
 The total energy is the sum of the electronic energy and the nuclear repulsion energy:
 
-```
-EQUATION
-E^0_{\rm total} = E^0_{\rm elec} + E_{\rm nuc},
-```
+<img src="./figures/initial-total-energy.png" height="50">
 
 where *0* denotes the initial SCF energy.
 
@@ -186,10 +130,7 @@ where *0* denotes the initial SCF energy.
 
 Start the SCF iterative procedure by building a new Fock matrix using the previous iteration's density as:
 
-```
-EQUATION
-F_{\mu\nu} = H^{\rm core}_{\mu\nu} + \sum_{\lambda\sigma}^{\rm AO} D^{i-1}_{\lambda\sigma} \left[ 2 (\mu\nu | \lambda\sigma) - (\mu\lambda|\nu\sigma) \right],
-```
+<img src="./figures/new-fock.png" height="50">
 where the double-summation runs over all the AOs and *i-1* denotes the density for the last iteration.
 
   * [Hint 1](./hints/hint7-1.md): New Fock Matrix
@@ -200,56 +141,30 @@ where the double-summation runs over all the AOs and *i-1* denotes the density f
 Form the new density matrix following the same procedure as in Step #5 above:
 
 Orthogonalize:
-```
-EQUATION
-{\mathbf F}' \equiv {\mathbf {\tilde S}}^{-1/2} {\mathbf F} {\mathbf S}^{-1/2}
-```
+<img src="./figures/orthog-fock.png" height="50">
 Diagonalize:
 
-```
-EQUATION
-{\mathbf F}' {\mathbf C}' = {\mathbf C}' \epsilon.
-```
+<img src="./figures/diag-new-fock.png" height="50">
 Back-transform:
 
-```
-EQUATION
-{\mathbf C} = {\mathbf S}^{-1/2} {\mathbf C}'
-```
+<img src="./figures/back-transform-coeff.png" height="50">
 Compute the density:
 
-```
-EQUATION
-D^i_{\mu\nu} = \sum_m^{\rm occ.} \left( {\mathbf C} \right)_\mu^m \left( {\mathbf C} \right)_\nu^m,
-```
+<img src="./figures/compute-density.png" height="50">
 where *i* denotes the current iteration density.
 
 ## Step #9: Compute the New SCF Energy 
 
 Compute the new SCF energy as before:
 
-```
-EQUATION
-E^i_{\rm elec} = \sum_{\mu\nu}^{\rm AO} D_{\mu\nu} \left( H^{\rm core}_{\mu\nu} + F_{\mu\nu} \right)
-```
-```
-EQUATION
-E^i_{\rm total} = E^i_{\rm elec} + E_{\rm nuc},
-```
+<img src="./figures/compute-new-scf-energy.png" height="50">
 where *i* denotes the SCF energy for the *i*th iteration.
 
 ## Step #10: Test for Convergence 
 Test both the energy and the density for convergence:
 
-```
-EQUATION
-\Delta E = E^i_{\rm elec} - E^{i-1}_{\rm elec} < \delta_1
-```
+<img src="./figures/convergence-test.png" height="50">
 
-```
-EQUATION
-{\rm rms}_D = \left[ \sum_{\mu\nu} \left( D^i_{\mu\nu} - D^{i-1}_{\mu\nu} \right)^2 \right]^{1/2} < \delta_2
-```
 If the difference in consecutive SCF energy and the root-mean-squared difference in consecutive densities do not fall below the prescribed thresholds, return to Step #7 and continue from there.
 
   * [Hint 1](./hints/hint10-1.md): Energies for Each Iteration
@@ -258,31 +173,19 @@ If the difference in consecutive SCF energy and the root-mean-squared difference
 ###  The MO-Basis Fock Matrix
 At convergence, the canonical Hartree-Fock MOs are, by definition, eigenfunctions of the Fock operator, viz.
 
-```
-EQUATION
-\[ \hat{F} \chi_i = \epsilon_i \chi_i \]
-```
+<img src="./figures/canonical-mos.png" height="50">
 If we multiply on the left by an arbitrary MO and integrate, we obtain:
 
-```
-EQUATION
-F_{ij} \equiv \epsilon_i\delta_{ij} = \langle \chi_j | \hat{F} | \chi_i \rangle. 
-```
+<img src="./figures/mo-fock-matrix-element.png" height="50">
 In other words, the Fock matrix should be diagonal in the MO basis, with the orbital energies as its diagonal elements.  We can demonstrate this explicitly using the AO-basis Fock matrix by first re-writing the above expression using the LCAO-MO coefficients:
 
-```
-EQUATION
-F_{ij} = \sum_{\mu\nu} C^j_\mu C^i_\nu \langle \phi_\mu | \hat{F} | \phi_\nu \rangle = \sum_{\mu\nu} C^j_\mu C^i_\nu F_{\mu\nu}.
-```
+<img src="./figures/mo-fock-matrix.png" height="50">
 Use the above equation to transform the Fock matrix from the AO basis to the MO basis and demonstrate that it is indeed diagonal (to within the convergence limits of the SCF iterative procedure).
 
 ### One-Electron Properties 
 As discussed in detail in Ch. 3 of the text by Szabo and Ostlund, the calculation of one-electron properties requires density matrix and the relevant property integrals.  The electronic contribution to the electric-dipole moment may be computed using,
 
-```
-EQUATION
-\langle \vec{\mu} \rangle = 2 \sum_{\mu\nu} D_{\mu\nu} \langle \phi_\mu | \vec{\mu} | \phi_\nu \rangle,
-```
+<img src="./figures/electric-dipole-moment.png" height="50">
 where the vector notation implies three sets of dipole-moment integrals -- one for each Cartesian component of the dipole operator.
 
 Two points to note:
@@ -294,10 +197,7 @@ The test cases provided below include the structural information dipole integral
 ### Population Analysis/Atomic Charges
 A Mulliken population analysis (also described in Szabo & Ostlund, Ch. 3) requires the overlap integrals and the electron density, in addition to information about the number of basis functions centered on each atom.  The charge on atom *A* may be computed as:
 
-```
-EQUATION
-q_A = Z_A - 2 \sum_{\mu \in A} ({\mathbf D S})_{\mu\mu},
-```
+<img src="./figures/atomic-charge.png" height="50">
 where the summation is limited to only those basis functions centered on atom *A*.
 
 ## Test Cases
