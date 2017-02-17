@@ -3,13 +3,7 @@ Here are two approaches for the [diagonalization](http://en.wikipedia.org/wiki/D
 ## Secular Determinant
 Since the moment of inertia tensor is only a 3x3 matrix, a brute-force approach via the secular determinant is feasible:
 
-```latex
-\left|\begin{array}{ccc}
-(I_{11}-\lambda) & I_{12} & I_{13} \\
-I_{21} & (I_{22}-\lambda) & I_{23} \\
-I_{31} & I_{32} & (I_{33}-\lambda) \\
-\end{array}\right| = 0
-```
+<img src="../figures/determinant.png" height="60">
 
 This leads to a cubic equation in &lambda;, which one can solve directly.  Have fun with that.
 
