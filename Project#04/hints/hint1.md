@@ -1,4 +1,4 @@
-Here's a code block that demonstrates how to carry out the AO to MO two-electron integral transformation using a single N<sup>8</sup> step.  Note that the original AO- and transformed MO-basis integrals are stored in a one-dimensional array taking full advantage of their eight-fold permutational symmetry, as described in [Project #3](../Project%2303).
+Here's a code block that demonstrates how to carry out the AO to MO two-electron integral transformation using a single N<sup>8</sup> step.  Note that the original AO- and transformed MO-basis integrals are stored in a one-dimensional array taking full advantage of their eight-fold permutational symmetry, as described in [Project #3](../../Project%2303).
 
 Note how the loop structure in the MO-indices (*i*, *j*, *k*, and *l*) automatically takes into account the permutational symmetry of the fully transformed integrals.
 
