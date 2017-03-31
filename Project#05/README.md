@@ -6,7 +6,7 @@ amplitudes as well as Fock-matrix elements and antisymmetrized, Dirac-notation t
 (as opposed to the spatial-orbital basis used in the earlier [MP2 Project](../Project%2304).
 Thus, the transformation of the AO-basis integrals into the spatial-MO basis must also include their translation into the spin-orbital basis:
 
-<img src="./figures/spin-orbital-eri.png" height="150">
+<img src="./figures/spin-orbital-eri.png" height="160">
 
 Thus, if you know the ordering of the orbitals (e.g. all occupied orbitals before virtual orbitals, perhaps alternating between alpha and beta spins), it is straightforward to carry out the integration over the spin components (the &sigma;'s) in the above expression.  Thus, each spatial-orbital MO-basis two-electron integral translates to 16 possible spin-orbital integrals, only four of which are non-zero.
 
@@ -21,7 +21,7 @@ Suggestion: For simplicity, store the two-electron integrals in a four-dimension
 ## Step #2: Build the Initial-Guess Cluster Amplitudes 
 For Hartree-Fock reference determinants, the most common initial guess for the cluster amplitudes are the Moller-Plesset first-order perturbed wave function:
 
-<img src="./figures/init-t-amps.png" height="100">
+<img src="./figures/init-t-amps.png" height="120">
 
 Note that if you have constructed the Fock matrix, two-electron integrals, and initial-guess amplitudes correctly at this point, 
 you should be able to compute the MP2 correlation energy using the simple spin-orbital expression and get identical results to those from [Project #4](../Project%2304):
