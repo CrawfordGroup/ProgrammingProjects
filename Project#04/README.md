@@ -22,7 +22,7 @@ The most straightforward expression of the AO/MO integral transformation is
 
 This approach is easy to implement (hence the word "[noddy](http://www.hackerslang.com/noddy.html)" above), but is expensive due to its N<sup>8</sup> computational order.  Nevertheless, you should start with this algorithm to get your code working, and run timings (use the UNIX "time" command) for the test cases below to get an idea of its computational cost.
 
-  * Hint 1: Noddy transformation code
+  * [Hint 1](./hints/hint1.md): Noddy transformation code
 ### The Smarter Algorithm
 
 Notice that none of the *C* coefficients in the above expression have any indices in common.  Thus, the summation could be rearranged such that:
@@ -37,7 +37,7 @@ while the AO-basis integrals have eight-fold permutational symmetry, the partial
 
 After you have the noddy algorithm working and timed, modify it to use this smarter algorithm and time the test cases again.  Enjoy!
 
-  * Hint 2: Smarter transformation code
+  * [Hint 2](./hints/hint2.md): Smarter transformation code
 
 ## Step #4: Compute the MP2 Energy
 
@@ -45,7 +45,7 @@ After you have the noddy algorithm working and timed, modify it to use this smar
 
 where *i* and *j* denote doubly-occupied orbitals and *a* and *b* unoccupied orbitals, and the denominator involves the MO energies.
 
-  * Hint 3: Occupied versus unoccupied orbitals
+  * [Hint 3](./hints/hint3.md): Occupied versus unoccupied orbitals
 
 ## Test Cases
 The input structures, integrals, etc. for these examples are found in the [input directory](./input).
