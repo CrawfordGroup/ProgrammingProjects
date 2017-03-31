@@ -1,6 +1,6 @@
 Here's a code block that demonstrates how to carry out the AO to MO two-electron integral transformation using four N<sup>5</sup> steps.  Note that the original AO- and transformed MO-basis integrals are stored in a one-dimensional array taking advantage of their eight-fold permutational symmetry, as described in [Project #3](../../Project%2303).  However, the half-transformed integrals, which lack bra-ket permutational symmetry, are stored in a two-dimensional array.
 
-A number of convenient functions [`mmult()`, `init_matrix()`, etc.] used in this code block can be found in the [diag.cc](http://sirius.chem.vt.edu/~crawdad/programming/diag.cc) discussed in [Project #1](../Project%2301).
+A number of convenient functions [`mmult()`, `init_matrix()`, etc.] used in this code block can be found in the [diag.cc](http://sirius.chem.vt.edu/~crawdad/programming/diag.cc) discussed in [Project #1](../../Project%2301).
 
 ```c++
   #define INDEX(i,j) ((i>j) ? (((i)*((i)+1)/2)+(j)) : (((j)*((j)+1)/2)+(i)))
