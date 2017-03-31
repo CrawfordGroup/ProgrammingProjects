@@ -69,7 +69,7 @@ where
 Note that the two-electron integrals may be stored efficiently in a one-dimensional array and the above relationship used to map between given 
 &mu;, &nu;, &lambda;, and &sigma; indices and a "compound index" defined as:
 
-<img src="./figures/compound-index-restrictions2.png" height="20">,
+<img src="./figures/compound-index-restrictions2.png" height="20">
 
   * [Hint 1](./hints/hint3-1.md): Compound indices
   * [Hint 2](./hints/hint3-2.md): Pre-Computed Lookup Arrays
