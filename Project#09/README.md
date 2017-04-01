@@ -15,7 +15,7 @@ for the purposes of this project we'll deal only with the one-electron (two-inde
 
 The vanishing integral rule of point-group theory may be stated as follows for Abelian groups:
 
-<img src="./figures/point-group-rule.png" height="20">
+<img src="./figures/point-group-rule.png" height="40">
 
 where <html>&Gamma;<sub>X</sub></html> denotes the irreducible representation (irrep) of entity X.
 That is, unless the direct product of the irreps of the functions or operators in the integrand contains the totally symmetric irrep, the integral must be zero.
@@ -146,7 +146,7 @@ in the full list of orbitals; the first number is the relative index, the second
 If we store the integral, MO coefficient, density, and Fock matrices in the block-diagonal structure described above, 
 we may compute matrix products of these quantities separately for each diagonal block.  For example, the matrix product may be written as:
 
-<img src="./figures/matrix-product.png" height="25">
+<img src="./figures/matrix-product.png" height="50">
 
 where *h* denotes a particular irrep of the point group and <b><i>C</i></b><sub>h</sub> denotes the *h*-th irrep subblock of the full matrix <b><i>C</i></b>.
 (The notation of the large plus with a circle around it indicates a direct sum.)
@@ -155,7 +155,7 @@ where *h* denotes a particular irrep of the point group and <b><i>C</i></b><sub>
 
 The calculation of the density matrix requires information about the number of occupied orbitals:
 
-<img src="./figures/density-matrix.png" height="25">
+<img src="./figures/density-matrix.png" height="50">
 
 In a calculation without symmetry, one need only know the number of electrons (equivalently, the atomic numbers of the atoms and the overall molecular charge) 
 to evaluate this expression.  However, if the density and MO coefficient matrices are stored in symmetry-blocked form, 
@@ -187,7 +187,7 @@ sophisticated guesses at the Fock matrix, e.g. Hueckel orbitals or other (semi)e
 
 The only portion of the SCF procedure involving two-electron integrals is the Fock-matrix build:
 
-<img src="./figures/fock-build.png" height="30">
+<img src="./figures/fock-build.png" height="60">
 
 where the notation used in [Project #3](../Project%2303) is retained above.
 If the Fock matrix and density matrix are stored in a symmetry-blocked manner similar to the overlap matrix above, 
