@@ -30,7 +30,7 @@ is approximately the zero matrix in a least-squares sense.  The error matrix for
 where <b><i>D<sub>i</sub></i></b> is the AO-basis density matrix used to construct 
 <b><i>F<sub>i</sub></i></b>, and  <b><i>S</i></b> is the AO-basis overlap matrix.  Minimization of <b><i>e'</i></b> under the constraint that 
 
-<img src="./figures/constraint.png" height="40">
+<img src="./figures/constraint.png" height="45">
 
 leads to the following system of linear equations for the c<sub>i</sub>:
 
@@ -38,7 +38,7 @@ leads to the following system of linear equations for the c<sub>i</sub>:
 
 where lambda is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-<img src="./figures/Bij.png" height="20">
+<img src="./figures/Bij.png" height="25">
 
 ## Step #1: Compute the Error Matrix in Each Iteration
 
