@@ -18,11 +18,11 @@ the "disconnected" triples are defined as
 
 and the "connected" triples as
 
-<img src="./figures/connected-triples.png" height="65">
+<img src="./figures/connected-triples.png" height="70">
 
 The three-index permutation operator is defined by its action on an algebraic function as
 
-<img src="./figures/three-index-permutation.png" height="20">
+<img src="./figures/three-index-permutation.png" height="25">
 
 The total energy is
 
