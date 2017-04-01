@@ -15,7 +15,7 @@ for the purposes of this project we'll deal only with the one-electron (two-inde
 
 The vanishing integral rule of point-group theory may be stated as follows for Abelian groups:
 
-<img src="./figures/point-group-rule.png" height="40">
+<img src="./figures/point-group-rule.png" height="30">
 
 where <html>&Gamma;<sub>X</sub></html> denotes the irreducible representation (irrep) of entity X.
 That is, unless the direct product of the irreps of the functions or operators in the integrand contains the totally symmetric irrep, the integral must be zero.
@@ -146,7 +146,7 @@ in the full list of orbitals; the first number is the relative index, the second
 If we store the integral, MO coefficient, density, and Fock matrices in the block-diagonal structure described above, 
 we may compute matrix products of these quantities separately for each diagonal block.  For example, the matrix product may be written as:
 
-<img src="./figures/matrix-product.png" height="50">
+<img src="./figures/matrix-product.png" height="40">
 
 where *h* denotes a particular irrep of the point group and <b><i>C</i></b><sub>h</sub> denotes the *h*-th irrep subblock of the full matrix <b><i>C</i></b>.
 (The notation of the large plus with a circle around it indicates a direct sum.)
