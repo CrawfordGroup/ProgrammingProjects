@@ -10,11 +10,11 @@ The spin-orbital expression for the (T) correction, using the same notation as i
 
 where 
 
-<img src="./figures/D.png" height="40">
+<img src="./figures/D.png" height="30">
 
 the "disconnected" triples are defined as
 
-<img src="./figures/disconnected-triples.png" height="40">
+<img src="./figures/disconnected-triples.png" height="30">
 
 and the "connected" triples as
 
@@ -22,7 +22,7 @@ and the "connected" triples as
 
 The three-index permutation operator is defined by its action on an algebraic function as
 
-<img src="./figures/three-index-permutation.png" height="25">
+<img src="./figures/three-index-permutation.png" height="20">
 
 The total energy is
 
