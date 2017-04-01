@@ -6,27 +6,27 @@ The CCSD(T) method is often referred to as the "gold standard" of quantum chemis
 The spin-orbital expression for the (T) correction, using the same notation as in 
 [Project #5](../Project%2305), is:
 
-<img src="./figures/t-correction.png" height="70">
+<img src="./figures/t-correction.png" height="60">
 
 where 
 
-<img src="./figures/D.png" height="60">
+<img src="./figures/D.png" height="45">
 
 the "disconnected" triples are defined as
 
-<img src="./figures/disconnected-triples.png" height="60">
+<img src="./figures/disconnected-triples.png" height="45">
 
 and the "connected" triples as
 
-<img src="./figures/connected-triples.png" height="75">
+<img src="./figures/connected-triples.png" height="70">
 
 The three-index permutation operator is defined by its action on an algebraic function as
 
-<img src="./figures/three-index-permutation.png" height="60">
+<img src="./figures/three-index-permutation.png" height="40">
 
 The total energy is
 
-<img src="./figures/total-energy.png" height="60">
+<img src="./figures/total-energy.png" height="40">
 
 ## Algorithm #1: Full Storage of Triples
 
