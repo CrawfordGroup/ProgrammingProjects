@@ -17,28 +17,28 @@ The purpose of this programming project is to implement the Pulay DIIS procedure
 
 Given a series of Fock matrices, <b><i>F<sub>i</sub></i></b> (expressed in the AO basis set), a new approximation to the converged solution may be written as
 
-<img src="./figures/new-approx-fock.png" height="50">
+<img src="./figures/new-approx-fock.png" height="40">
 
 by requiring that the corresponding extrapolated "error" matrix
 
-<img src="./figures/error-matrix.png" height="50">
+<img src="./figures/error-matrix.png" height="40">
 
 is approximately the zero matrix in a least-squares sense.  The error matrix for each iteration is given by
 
-<img src="./figures/iter-error-matrix.png" height="40">
+<img src="./figures/iter-error-matrix.png" height="20">
 
 where <b><i>D<sub>i</sub></i></b> is the AO-basis density matrix used to construct 
 <b><i>F<sub>i</sub></i></b>, and  <b><i>S</i></b> is the AO-basis overlap matrix.  Minimization of <b><i>e'</i></b> under the constraint that 
 
-<img src="./figures/constraint.png" height="50">
+<img src="./figures/constraint.png" height="40">
 
 leads to the following system of linear equations for the c<sub>i</sub>:
 
-<img src="./figures/sys-lin-eqn-ci.png" height="150">
+<img src="./figures/sys-lin-eqn-ci.png" height="125">
 
 where lambda is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-<img src="./figures/Bij.png" height="40">
+<img src="./figures/Bij.png" height="20">
 
 ## Step #1: Compute the Error Matrix in Each Iteration
 
