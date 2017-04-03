@@ -34,10 +34,7 @@ iteration rather than stored on disk.))
 
 At the heart of the SCF procedure is the expensive Fock-matrix term:
 
-```
-EQUATION
-F_{ij} = H^{\rm core}_{ij} + \sum_{kl}^{\rm AO} D_{kl} \left[ 2 (ij|kl) - (ik|jl) \right],
-```
+<img src="./figures/fock-matrix.png" height="50">
 
 where we use *i*, *j*, *k*, and *l* to denote AO-basis indices.  As described
 in [Project #3](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303), a simple algorithm for
@@ -117,44 +114,33 @@ each individual integral to the Fock matrix:
   iwl_buf_close(&InBuf, 1);
 ```
 
-Thus a given integral, (ij|kl), would contribute to **//at least two//** Fock matrix elements as:
+Thus a given integral, (ij|kl), would contribute to <b><i>at least two</i></b> Fock matrix elements as:
 
-```
-EQUATION
-F_{ij} \leftarrow +2 * D_{kl} (ij|kl)
-```
+<img src="./figures/fock-contribution-1.png" height="25">
+
 and
 
-```
-EQUATION
-F_{ik} \leftarrow - D_{jl} (ij|kl).
-```
+<img src="./figures/fock-contribution-2.png" height="25">
 
 ## Handling Permutational Symmetry
 
 The most difficult aspect of the out-of-core algorithm is the fact that file contains only the permutationally unique integrals,
 *(ij|kl)*, such that:
-```
-EQUATION
-i \geq j,\ \ \ \ \ k \geq l,\ \ \ \ \ \ {\rm and}\ \ \ \ \ \ ij \geq kl,
-```
+
+<img src="./figures/index-restrictions.png" height="25">
+
 where
 
-```
-EQUATION
-ij \equiv i(i+1)/2 + j\ \ \ \ \ \ {\rm and} \ \ \ \ \ \ kl \equiv k(k+1)/2 + l.
-```
+<img src="./figures/compound-indices.png" height="25">
+
 Thus, when determining the contribution of a given integral to various elements
 of the Fock matrix, one must consider all possible unique permutations of the
 indices, *i*, *j*, *k*, and *l*.  Note, however, that coincidences among the
 indices can limit the number of possibilities.  For example, if one encountered
-the integral *(22|11)*, it would contribute to a total of * **four** * Fock
+the integral *(22|11)*, it would contribute to a total of <b><i>four</i></b> Fock
 matrix elements, viz.
 
-```
-EQUATION
-F_{22} \leftarrow 2 D_{11} (22|11),\ \ \ F_{21} \leftarrow - D_{21} (22|11),\ \ \ F_{11} \leftarrow 2 D_{22} (22|11),\ \ \ {\rm and}\ \ \ F_{12} \leftarrow -D_{12} (22|11).
-```
+<img src="./figures/fock-contribution-3.png" height="25">
 
 All such cases must be included in the algorithm to obtain a correct Fock matrix.
 

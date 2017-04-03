@@ -38,7 +38,7 @@ leads to the following system of linear equations for the c<sub>i</sub>:
 
 where lambda is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-<img src="./figures/Bij.png" height="25">
+<img src="./figures/Bij.png" height="20">
 
 ## Step #1: Compute the Error Matrix in Each Iteration
 
