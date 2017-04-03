@@ -12,10 +12,7 @@ zero as the equations converge.  In the SCF procedure, we use the atomic-orbital
 representation of the occupied-virtual block of the Fock matrix. In the CC method, we
 could choose the difference between successive sets of cluster amplitudes:
 
-```
-EQUATION
-{\mathbf e}_i = {\mathbf T}_{i+1} - {\mathbf T}_i,
-```
+<img src="./figures/error-vector.png" height="25">
 
 where <b>T</b><sub>i</sub> represents a vector containing all the cluster amplitudes for the *i*-th iteration.
 
@@ -23,8 +20,8 @@ There are three important points to note about this choice of error vector:
   * Defining the error vectors as differences between successive sets of amplitudes
     implies that one cannot begin the DIIS extrapolation until at least three
     iterations are complete.
-  * Just as in the SCF DIIS procedure, error vectors should only be computed using *
-    **non-extrapolated** * sets of cluster amplitudes.
+  * Just as in the SCF DIIS procedure, error vectors should only be computed using
+    <b><i>non-extrapolated</i></b> sets of cluster amplitudes.
   * The set of cluster amplitudes can require substantial memory for larger
     molecules; hence, the choice of the number of error vectors used in the CC DIIS
     procedure is potentially dependent on the available storage (disk and memory).
@@ -32,48 +29,15 @@ There are three important points to note about this choice of error vector:
 ## Extrapolation
 Given the above definition of the error vectors, the set of linear equations to be solved is the same as that for the SCF DIIS procedure:
 
-```
-EQUATION
-\left(
-\begin{array}{ccccc}
-B_{11} & B_{12} & \ldots & B_{1m} & -1 \\
-B_{21} & B_{22} & \ldots & B_{2m} & -1 \\
-\ldots & \ldots & \ldots & \ldots & -1 \\
-B_{m1} & B_{m2} & \ldots & B_{mm} & -1 \\
--1 & -1 & \ldots & -1 & 0 \\
-\end{array}
-\right) \left(
-\begin{array}{c}
-c_1 \\
-c_2 \\
-\ldots \\
-c_m \\
-\lambda
-\end{array}
-\right) = \left(
-\begin{array}{c}
-0 \\
-0 \\
-\ldots \\
-0 \\
--1 \\
-\end{array}
-\right),
-```
+<img src="./figures/sys-lin-eqn-ci.png" height="125">
 
-where lambda is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
+where &lambda; is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-```
-EQUATION
-B_{ij} \equiv {\mathbf e}_i \cdot {\mathbf e}_j.
-```
+<img src="./figures/Bij.png" height="25">
 
 A new set of cluster amplitudes is then obtained as a linear combinations of older amplitudes using the coefficients from the linear equations above:
 
-```
-EQUATION
-{\mathbf T}_{\rm new} = \sum_i c_i {\mathbf T}_i
-```
+<img src="./figures/new-t-amps.png" height="25">
 
 Again: The extrapolated cluster amplitudes should be used only in the CC amplitude equations, not to compute subsequent error vectors.
 
@@ -81,8 +45,7 @@ Again: The extrapolated cluster amplitudes should be used only in the CC amplitu
 Once the procedure is working, you should observe a considerable reduction in the
 number of iterations required to converge the CC amplitude equations to a given
 tolerance.  For example, without DIIS extrapolation, the STO-3G H<sub>2</sub>O test
-case from [Project #5](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2305) 
-converges in 38 iterations to a
+case from [Project #5](../Project%2305) converges in 38 iterations to a
 precision of 10<sup>-12</sup>:
 
 ```
