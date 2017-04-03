@@ -29,18 +29,18 @@ from a well-chosen subspace of the full determinantal space.
 
 Compute a representation of the Hamiltonian within the space of guess vectors,
 
-<img src="./figures/guess-vector-hamiltonian.png" height="50">
+<img src="./figures/guess-vector-hamiltonian.png" height="25">
 
 and then diagonalize this so-called "subspace Hamiltonian",
 
-<img src="./figures/diag-subspace-hamiltonian.png" height="50">
+<img src="./figures/diag-subspace-hamiltonian.png" height="25">
 
 where *M* is the number of roots of interest. The current estimate of each of
 the *M* eigenvectors we want is a linear combination of the guess vectors,
 with the &alpha;<sup>k</sup> subspace eigenvectors providing the
 coefficients, *viz.*
 
-<img src="./figures/coefficients.png" height="50">
+<img src="./figures/coefficients.png" height="60">
 
 The dimension of ***G*** is typically very small (perhaps a dozen times the
 number of guess vectors, *L*), so one can used a standard diagonalization
@@ -55,11 +55,11 @@ elements must be computed "on the fly" during the computation of each
 
 Build a set of "correction vectors",
 
-<img src="./figures/correction-vectors.png" height="50">
+<img src="./figures/correction-vectors.png" height="30">
 
 where the "residual" vectors are defined as
 
-<img src="./figures/residual-vectors.png" height="50">
+<img src="./figures/residual-vectors.png" height="60">
 
 and *N* is the dimension of the Hamiltonian (i.e. the number of determinants).
 The inverse appearing in the definition of the correction vectors is commonly
@@ -106,7 +106,7 @@ dimension to something more manageable before continuing the Davidson-Liu
 algorithm.  A typical choice is to collapse to the current best set of guesses
 using the equation given above for the current final eigenvectors:
 
-<img src="./figures/final-eigenvectors.png" height="50">
+<img src="./figures/final-eigenvectors.png" height="60">
 
 #### References
  - <b id="f1">1</b>: E.R. Davidson, "The iterative calculation of a few of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," *J. Comput. Phys.* **17**, 87 (1975).[up](#r1)
