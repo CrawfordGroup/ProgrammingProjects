@@ -26,19 +26,18 @@ physical memory available on workstations or supercomputer nodes.
 The purpose of this project is to consider and implement an "out-of-core" SCF
 algorithm, that is, an approach that minimizes the core-memory requirements of
 the program by reading the two-electron repulsion integrals from disk in
-batches when only they are needed.((An alternative approach is the so-called
+batches when only they are needed (An alternative approach is the so-called
 "direct" SCF, in which the two-electron integrals are re-computed in each SCF
-iteration rather than stored on disk.))
+iteration rather than stored on disk)
 
 ## The Fock Matrix Build
 
 At the heart of the SCF procedure is the expensive Fock-matrix term:
 
-<img src="./figures/fock-matrix.png" height="75">
+<img src="./figures/fock-matrix.png" height="60">
 
 where we use *i*, *j*, *k*, and *l* to denote AO-basis indices.  As described
-in [Project #3](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303), a simple algorithm for
-evaluating this matrix is:
+in [Project #3](../Project%2303), a simple algorithm for evaluating this matrix is:
 
 ```cpp
 for(i=0; i < nao; i++)
@@ -60,10 +59,9 @@ for(i=0; i < nao; i++)
 
 This algorithm hinges on the fact that all the two-electron integrals are
 immediately available in the TEI array (which takes advantage of permutational
-symmetry).  In 
-[Project #7](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2307) 
-you made use of the following code, which reads the integrals into the TEI
-array in batches (sometimes referred to in PSI as "buffers"):
+symmetry).  In [Project #7](../Project%2307) you made use of the following code, 
+which reads the integrals into the TEI array in batches (sometimes referred to 
+in PSI as "buffers"):
 
 ```cpp
   iwl_buf_init(&InBuf, PSIF_SO_TEI, 1e-14, 1, 0);
@@ -145,5 +143,5 @@ matrix elements, viz.
 All such cases must be included in the algorithm to obtain a correct Fock matrix.
 
 ## Additional Reading
-  * J. Almlof, K. Faegri, and K. Korsell, "Principles for a Direct SCF Approach to LCAO-MO //Ab Initio// Calculations," //J. Comp. Chem.// **3**, 385-399 (1982).
+  * J. Almlof, K. Faegri, and K. Korsell, "Principles for a Direct SCF Approach to LCAO-MO *Ab Initio* Calculations," *J. Comp. Chem.* **3**, 385-399 (1982).
 
