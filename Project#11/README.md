@@ -129,7 +129,7 @@ The most difficult aspect of the out-of-core algorithm is the fact that file con
 
 where
 
-<img src="./figures/compound-indices.png" height="20">
+<img src="./figures/compound-indices.png" height="22.5">
 
 Thus, when determining the contribution of a given integral to various elements
 of the Fock matrix, one must consider all possible unique permutations of the
