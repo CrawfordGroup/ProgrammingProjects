@@ -76,25 +76,25 @@ possible determinants arising from this configuration,
 
 are components of one singlet and one triplet in the following combinations:
 
-<img src="./figures/triplet-combinations.png" height="60">
+<img src="./figures/triplet-combinations.png" height="50">
 
-<img src="./figures/singlet-combinations.png" height="60">
+<img src="./figures/singlet-combinations.png" height="50">
 
 where the superscript is the spin multiplicity (*2S+1*) and the subscript is
 the *M<sub>S</sub>* value of the wave function.  So, if we wanted to compute
 only the eigenvalues and eigenfunctions corresponding spin singlets in our CIS
-calculation, we could introduce the restriction on our CIS coefficients that
-<html>&alpha;</html> and <html>&beta;</html> excitations involving the same
-*spatial* orbitals must be identical (including the sign).  Similarly, if we
-wanted only triplets, we could require that the <html>&alpha;</html> and
-<html>&beta;</html> excitations have the same magnitude but opposite signs.
+calculation, we could introduce the restriction on our CIS coefficients that <html>&alpha;</html> 
+and <html>&beta;</html> excitations involving the same <i>spatial</i> orbitals 
+must be identical (including the sign).  Similarly, if we wanted only triplets, 
+we could require that the <html>&alpha;</html> and <html>&beta;</html> excitations 
+have the same magnitude but opposite signs.
 
 Let's begin with the singlets.  Starting from the spin-orbital eigenvalue
 expression and the equation for the CIS Hamiltonian matrix elements in the
 previous section, we may write a spin-factored equation for the <html>&alpha;</html> 
 coefficients as
 
-<img src="./figures/spin-factored-eqn.png" height="60">
+<img src="./figures/spin-factored-eqn.png" height="55">
 
 Note that the mix-spin cases (where *j=*<html>&alpha;</html> and
 *b=*<html>&beta;</html> or *vice versa*) do not contribute since the Fock
@@ -176,19 +176,19 @@ Hamiltonian storage cost), one can rearrange the eigenvalue equations.  First
 write eigenvalue equation two separate equations, each in terms of the
 submatrices **A** and **B**:
 
-<img src="./figures/smarter-tdhf-1.png" height="25">
+<img src="./figures/smarter-tdhf-1.png" height="22.5">
 
 and
 
-<img src="./figures/smarter-tdhf-2.png" height="25">
+<img src="./figures/smarter-tdhf-2.png" height="22.5">
 
 Now take +/- combinations of these equations to obtain
 
-<img src="./figures/smarter-tdhf-3.png" height="25">
+<img src="./figures/smarter-tdhf-3.png" height="22.5">
 
 and
 
-<img src="./figures/smarter-tdhf-4.png" height="25">
+<img src="./figures/smarter-tdhf-4.png" height="22.5">
 
 Solve for ***(X+Y)*** in the second equation:
 
