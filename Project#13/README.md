@@ -29,7 +29,7 @@ from a well-chosen subspace of the full determinantal space.
 
 Compute a representation of the Hamiltonian within the space of guess vectors,
 
-<img src="./figures/guess-vector-hamiltonian.png" height="25">
+<img src="./figures/guess-vector-hamiltonian.png" height="22.5">
 
 and then diagonalize this so-called "subspace Hamiltonian",
 
@@ -109,6 +109,6 @@ using the equation given above for the current final eigenvectors:
 <img src="./figures/final-eigenvectors.png" height="60">
 
 #### References
- - <b id="f1">1</b>: E.R. Davidson, "The iterative calculation of a few of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," *J. Comput. Phys.* **17**, 87 (1975).[up](#r1)
- - <b id="f2">2</b>: B.Liu, "The simultaneous expansion method for the iterative solution of several of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," Technical Report LBL-8158, Lawrence Berkeley Laboratory, University of California, Berkeley, 1978.[up](#r2)
- - <b id="f3">3</b>: C.D. Sherrill, "The Configuration Interaction Method: Advances in Highly Correlated Approaches," *Adv. Quantum Chem.* **34**, 143 (1998). [up](#r3)
+ - <b id="f1">1</b>: E.R. Davidson, "The iterative calculation of a few of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," *J. Comput. Phys.* **17**, 87 (1975). [(return to text)](#r1)
+ - <b id="f2">2</b>: B.Liu, "The simultaneous expansion method for the iterative solution of several of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," Technical Report LBL-8158, Lawrence Berkeley Laboratory, University of California, Berkeley, 1978. [(return to text)](#r2)
+ - <b id="f3">3</b>: C.D. Sherrill, "The Configuration Interaction Method: Advances in Highly Correlated Approaches," *Adv. Quantum Chem.* **34**, 143 (1998). [(return to text)](#r3)
