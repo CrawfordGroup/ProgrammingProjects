@@ -34,7 +34,7 @@ iteration rather than stored on disk.))
 
 At the heart of the SCF procedure is the expensive Fock-matrix term:
 
-<img src="./figures/fock-matrix.png" height="50">
+<img src="./figures/fock-matrix.png" height="75">
 
 where we use *i*, *j*, *k*, and *l* to denote AO-basis indices.  As described
 in [Project #3](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303), a simple algorithm for
@@ -116,22 +116,22 @@ each individual integral to the Fock matrix:
 
 Thus a given integral, (ij|kl), would contribute to <b><i>at least two</i></b> Fock matrix elements as:
 
-<img src="./figures/fock-contribution-1.png" height="25">
+<img src="./figures/fock-contribution-1.png" height="20">
 
 and
 
-<img src="./figures/fock-contribution-2.png" height="25">
+<img src="./figures/fock-contribution-2.png" height="20">
 
 ## Handling Permutational Symmetry
 
 The most difficult aspect of the out-of-core algorithm is the fact that file contains only the permutationally unique integrals,
 *(ij|kl)*, such that:
 
-<img src="./figures/index-restrictions.png" height="25">
+<img src="./figures/index-restrictions.png" height="20">
 
 where
 
-<img src="./figures/compound-indices.png" height="25">
+<img src="./figures/compound-indices.png" height="20">
 
 Thus, when determining the contribution of a given integral to various elements
 of the Fock matrix, one must consider all possible unique permutations of the
@@ -140,7 +140,7 @@ indices can limit the number of possibilities.  For example, if one encountered
 the integral *(22|11)*, it would contribute to a total of <b><i>four</i></b> Fock
 matrix elements, viz.
 
-<img src="./figures/fock-contribution-3.png" height="25">
+<img src="./figures/fock-contribution-3.png" height="20">
 
 All such cases must be included in the algorithm to obtain a correct Fock matrix.
 
