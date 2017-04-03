@@ -31,7 +31,7 @@ If we recognize that we have one of these equations for every combination of
 *i* and *a* spin-orbitals, then this equation may be viewed as a matrix
 eigenvalue problem:
 
-<img src="./figures/matrix-eigenvalue-problem.png" height="30">
+<img src="./figures/matrix-eigenvalue-problem.png" height="25">
 
 To solve this equation, we need an expression for the matrix elements in terms
 of things we already know, i.e. Fock matrix elements and two-electron
@@ -76,7 +76,9 @@ possible determinants arising from this configuration,
 
 are components of one singlet and one triplet in the following combinations:
 
-<img src="./figures/singlet-triplet-combinations.png" height="60">
+<img src="./figures/triplet-combinations.png" height="60">
+
+<img src="./figures/singlet-combinations.png" height="60">
 
 where the superscript is the spin multiplicity (*2S+1*) and the subscript is
 the *M<sub>S</sub>* value of the wave function.  So, if we wanted to compute
@@ -89,10 +91,10 @@ wanted only triplets, we could require that the <html>&alpha;</html> and
 
 Let's begin with the singlets.  Starting from the spin-orbital eigenvalue
 expression and the equation for the CIS Hamiltonian matrix elements in the
-previous section, we may write a spin-factored equation for the
-<html>&alpha;</html> coefficients as
+previous section, we may write a spin-factored equation for the <html>&alpha;</html> 
+coefficients as
 
-<img src="./figures/spin-factored-eqn.png" height="30">
+<img src="./figures/spin-factored-eqn.png" height="60">
 
 Note that the mix-spin cases (where *j=*<html>&alpha;</html> and
 *b=*<html>&beta;</html> or *vice versa*) do not contribute since the Fock
@@ -157,7 +159,7 @@ The definition of the ***A*** matrix is just the CIS matrix itself, *viz.*
 while **X** and **Y** are the parameters of single excitations and
 de-excitations, respectively, and the ***B*** matrix is simply
 
-<img src="./figures/B-matrix.png" height="30">
+<img src="./figures/B-matrix.png" height="25">
 
 Thus, the row/column dimension of the TDHF/RPA Hamiltonian is twice that of the
 CIS Hamiltonian, and the matrix is non-symmetric (so you must be careful about
@@ -174,28 +176,28 @@ Hamiltonian storage cost), one can rearrange the eigenvalue equations.  First
 write eigenvalue equation two separate equations, each in terms of the
 submatrices **A** and **B**:
 
-<img src="./figures/smarter-tdhf-1.png" height="30">
+<img src="./figures/smarter-tdhf-1.png" height="25">
 
 and
 
-<img src="./figures/smarter-tdhf-2.png" height="30">
+<img src="./figures/smarter-tdhf-2.png" height="25">
 
 Now take +/- combinations of these equations to obtain
 
-<img src="./figures/smarter-tdhf-3.png" height="30">
+<img src="./figures/smarter-tdhf-3.png" height="25">
 
 and
 
-<img src="./figures/smarter-tdhf-4.png" height="30">
+<img src="./figures/smarter-tdhf-4.png" height="25">
 
 Solve for ***(X+Y)*** in the second equation:
 
-<img src="./figures/smarter-tdhf-5.png" height="30">
+<img src="./figures/smarter-tdhf-5.png" height="25">
 
 Insert this result into the first equation, rearrange a bit, and finally
 obtain:
 
-<img src="./figures/smarter-tdhf-6.png" height="30">
+<img src="./figures/smarter-tdhf-6.png" height="25">
 
 This is an eigenvalue equation of the same dimension as the CIS eigenvalue
 equation (number of occupied orbitals times number of unoccupied orbitals),
