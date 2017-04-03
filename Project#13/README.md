@@ -81,7 +81,7 @@ Return to step #2 and continue.
 ## CIS Sigma Equation
 
 We will focus on the spin-adapted singlet formulation of CIS, 
-for which the <b>&sigma;</b> = <b>H c</b>equation was given in 
+for which the <b>&sigma;</b> = <b>H c</b> equation was given in 
 [Project 12](../Project%2312):
 
 <img src="./figures/spin-adapted-cis-eqn.png" height="50">
@@ -91,8 +91,7 @@ for which the <b>&sigma;</b> = <b>H c</b>equation was given in
 What should we choose for guess vectors?  As noted above, the simplest choice
 is probably a set of unit vectors, one for each eigenvalue you want.  But in
 what position of the vector should we put the 1?  For a hint, look at the
-structure of the 
-[spin-adapted singlet CIS Hamiltonian](../Project%2312/hints/hint2.md)  
+structure of the [spin-adapted singlet CIS Hamiltonian](../Project%2312/hints/hint2.md)  
 for the H<sub>2</sub>O STO-3G test case and note that it is
 strongly diagonally dominant.  Thus, if the diagonal elements are reasonable
 approximations to the true eigenvalues, and we want to compute only the lowest
