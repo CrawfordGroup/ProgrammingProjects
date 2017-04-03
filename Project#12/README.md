@@ -18,27 +18,27 @@ The fundamental idea behind CIS is the representation of the excited-state wave
 functions as linear combinations of singly excited determinants relative to the
 Hartree-Fock reference wave function, *viz.*
 
-<img src="./figures/singly-excited-determinant.png" height="60">
+<img src="./figures/singly-excited-determinant.png" height="50">
 
 where *m* identifies the various excited states, and we will use *i* and *j*
 (*a* and *b*) to denote occupied (unoccupied) spin-orbitals. Inserting this
 into the Schr<html>&ouml;</html>dinger equation and left-projecting onto a
 particular singly excited determinant gives
 
-<img src="./figures/excited-det-schrod-eqn.png" height="60">
+<img src="./figures/excited-det-schrod-eqn.png" height="50">
 
 If we recognize that we have one of these equations for every combination of
 *i* and *a* spin-orbitals, then this equation may be viewed as a matrix
 eigenvalue problem:
 
-<img src="./figures/matrix-eigenvalue-problem.png" height="60">
+<img src="./figures/matrix-eigenvalue-problem.png" height="30">
 
 To solve this equation, we need an expression for the matrix elements in terms
 of things we already know, i.e. Fock matrix elements and two-electron
 integrals.  This can be done using either algebraic or diagrammatic techniques
 to obtain (in the spin-orbital notation of previous projects):
 
-<img src="./figures/matrix-elements.png" height="60">
+<img src="./figures/matrix-elements.png" height="30">
 
 Our task is then relatively simple: Build the Hamiltonian matrix (expressed in
 the basis of all singly excited determinants) using the above expression and
@@ -72,7 +72,7 @@ from a simple two-electron/two-orbital example (such as the *1s 2s* excited
 state configuration of the He atom).  One can easily show that the four
 possible determinants arising from this configuration,
 
-<img src="./figures/four-possible-determinants.png" height="60">
+<img src="./figures/four-possible-determinants.png" height="50">
 
 are components of one singlet and one triplet in the following combinations:
 
@@ -92,7 +92,7 @@ expression and the equation for the CIS Hamiltonian matrix elements in the
 previous section, we may write a spin-factored equation for the
 <html>&alpha;</html> coefficients as
 
-<img src="./figures/pin-factored-eqn.png" height="60">
+<img src="./figures/spin-factored-eqn.png" height="30">
 
 Note that the mix-spin cases (where *j=*<html>&alpha;</html> and
 *b=*<html>&beta;</html> or *vice versa*) do not contribute since the Fock
@@ -101,11 +101,11 @@ carry out spin integration on the integrals in the above expression and assume
 that the <html>&alpha;</html> and <html>&beta;</html> CI coefficients are
 identical for the same spatial orbitals, i.e.,
 
-<img src="./figures/identical-ci-coeff.png" height="60">
+<img src="./figures/identical-ci-coeff.png" height="30">
 
 we obtain the <b><i>spatial orbital</i></b> expression
 
-<img src="./figures/spatial-orbital-expression.png" height="60">
+<img src="./figures/spatial-orbital-expression.png" height="50">
 
 The part in brackets above is an expression for the spatial-orbital CIS
 Hamiltonian, spin-adapted for singlet excited states, and diagonalization of
@@ -117,11 +117,11 @@ spin-orbital matrix earlier.
 How about the triplets?  We use exactly the same spin-factorization, but
 instead require
 
-<img src="./figures/inverse-ci-coeff.png" height="60">
+<img src="./figures/inverse-ci-coeff.png" height="30">
 
 This yields a slightly simpler Hamiltonian:
 
-<img src="./figures/simpler-hamiltonian.png" height="60">
+<img src="./figures/simpler-hamiltonian.png" height="50">
 
 which, upon diagonalization, will yield only the triplet eigenvalues (but each only occurring once) from your earlier diagonalziation.
 
@@ -148,16 +148,16 @@ TDHF/RPA wave function expansion in terms of orbital rotations instead of
 Slater determinants, but that's a discussion for another day.)  The TDHF/RPA
 eigenvalue equations take the form
 
-<img src="./figures/tdhf-eqn.png" height="60">
+<img src="./figures/tdhf-eqn.png" height="50">
 
 The definition of the ***A*** matrix is just the CIS matrix itself, *viz.*
 
-<img src="./figures/A-matrix.png" height="60">
+<img src="./figures/A-matrix.png" height="30">
 
 while **X** and **Y** are the parameters of single excitations and
 de-excitations, respectively, and the ***B*** matrix is simply
 
-<img src="./figures/B-matrix.png" height="60">
+<img src="./figures/B-matrix.png" height="30">
 
 Thus, the row/column dimension of the TDHF/RPA Hamiltonian is twice that of the
 CIS Hamiltonian, and the matrix is non-symmetric (so you must be careful about
@@ -174,28 +174,28 @@ Hamiltonian storage cost), one can rearrange the eigenvalue equations.  First
 write eigenvalue equation two separate equations, each in terms of the
 submatrices **A** and **B**:
 
-<img src="./figures/smarter-tdhf-1.png" height="60">
+<img src="./figures/smarter-tdhf-1.png" height="30">
 
 and
 
-<img src="./figures/smarter-tdhf-2.png" height="60">
+<img src="./figures/smarter-tdhf-2.png" height="30">
 
 Now take +/- combinations of these equations to obtain
 
-<img src="./figures/smarter-tdhf-3.png" height="60">
+<img src="./figures/smarter-tdhf-3.png" height="30">
 
 and
 
-<img src="./figures/smarter-tdhf-4.png" height="60">
+<img src="./figures/smarter-tdhf-4.png" height="30">
 
 Solve for ***(X+Y)*** in the second equation:
 
-<img src="./figures/smarter-tdhf-5.png" height="60">
+<img src="./figures/smarter-tdhf-5.png" height="30">
 
 Insert this result into the first equation, rearrange a bit, and finally
 obtain:
 
-<img src="./figures/smarter-tdhf-6.png" height="60">
+<img src="./figures/smarter-tdhf-6.png" height="30">
 
 This is an eigenvalue equation of the same dimension as the CIS eigenvalue
 equation (number of occupied orbitals times number of unoccupied orbitals),
@@ -208,12 +208,12 @@ approach, for all four test cases below.
 
 ## Test Cases
 The input structures, integrals, etc. for these examples may be found in the 
-[input directory](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/input).
+[input directory](./input).
 
 | Test Case | CIS | RPA (Method 1) | RPA (Method 2) |
 |-----------|-----|----------------|----------------|
-| STO-3G Water | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/STO-3G/output_cis.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/STO-3G/output_rpa1.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/STO-3G/output_rpa2.txt) |
-| DZ Water | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZ/output_cis.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZ/output_rpa1.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZ/output_rpa2.txt) |
-| DZP Water | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZP/output_cis.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZP/output_rpa1.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/h2o/DZP/output_rpa2.txt) |
-| STO-3G Methane | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/ch4/STO-3G/output_cis.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/ch4/STO-3G/output_rpa1.txt) | [output](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/output/ch4/STO-3G/output_rpa2.txt) |
+| STO-3G Water | [output](./output/h2o/STO-3G/output_cis.txt) | [output](./output/h2o/STO-3G/output_rpa1.txt) | [output](./output/h2o/STO-3G/output_rpa2.txt) |
+| DZ Water | [output](./output/h2o/DZ/output_cis.txt) | [output](./output/h2o/DZ/output_rpa1.txt) | [output](./output/h2o/DZ/output_rpa2.txt) |
+| DZP Water | [output](./output/h2o/DZP/output_cis.txt) | [output](./output/h2o/DZP/output_rpa1.txt) | [output](./output/h2o/DZP/output_rpa2.txt) |
+| STO-3G Methane | [output](./output/ch4/STO-3G/output_cis.txt) | [output](./output/ch4/STO-3G/output_rpa1.txt) | [output](./output/ch4/STO-3G/output_rpa2.txt) |
 
