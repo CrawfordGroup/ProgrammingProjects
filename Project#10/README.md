@@ -12,7 +12,7 @@ zero as the equations converge.  In the SCF procedure, we use the atomic-orbital
 representation of the occupied-virtual block of the Fock matrix. In the CC method, we
 could choose the difference between successive sets of cluster amplitudes:
 
-<img src="./figures/error-vector.png" height="25">
+<img src="./figures/error-vector.png" height="20">
 
 where <b>T</b><sub>i</sub> represents a vector containing all the cluster amplitudes for the *i*-th iteration.
 
@@ -33,11 +33,11 @@ Given the above definition of the error vectors, the set of linear equations to 
 
 where &lambda; is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-<img src="./figures/Bij.png" height="25">
+<img src="./figures/Bij.png" height="20">
 
 A new set of cluster amplitudes is then obtained as a linear combinations of older amplitudes using the coefficients from the linear equations above:
 
-<img src="./figures/new-t-amps.png" height="25">
+<img src="./figures/new-t-amps.png" height="50">
 
 Again: The extrapolated cluster amplitudes should be used only in the CC amplitude equations, not to compute subsequent error vectors.
 
