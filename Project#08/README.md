@@ -1,6 +1,6 @@
 # Project #8: DIIS extrapolation for the SCF procedure
 
-The convergence of the self-consistent field (SCF) algorithm presented in Project #3 is rather slow.  
+The convergence of the self-consistent field (SCF) algorithm presented in [Project #3](../Project%2303) is rather slow.
 Even the STO-3G H<sub>2</sub>O example requires more than 20 iterations to converge the RMS density difference to a relatively loose threshold of 10<sup>-8</sup>.
 One of the most effective methods for speeding up such iterative sequences is the 
 "Direct Inversion in the Iterative Subspace (DIIS)" approach, which was 
@@ -11,110 +11,64 @@ a new guess may be constructed as a simple linear combination of the previous fe
 where the coefficients of such an extrapolation are determined from Lagrangian minimization procedure.
 
 The purpose of this programming project is to implement the Pulay DIIS procedure within the SCF algorithm from 
-[Project #3](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303).
+[Project #3](../Project%2303).
 
 ## Working Equations
 
 Given a series of Fock matrices, <b><i>F<sub>i</sub></i></b> (expressed in the AO basis set), a new approximation to the converged solution may be written as
 
-```
-EQUATION
-{\mathbf F}' = \sum_i c_i {\mathbf F}_i
-```
-
+<img src="./figures/new-approx-fock.png" height="40">
 
 by requiring that the corresponding extrapolated "error" matrix
 
-```
-EQUATION
-{\mathbf e}' = \sum_i c_i {\mathbf e}_i \approx {\mathbf 0}
-```
-
+<img src="./figures/error-matrix.png" height="40">
 
 is approximately the zero matrix in a least-squares sense.  The error matrix for each iteration is given by
 
-```
-EQUATION
-{\mathbf e_i} \equiv {\mathbf F}_i {\mathbf D}_i {\mathbf S} - {\mathbf S} {\mathbf D}_i {\mathbf F}_i,
-```
-
+<img src="./figures/iter-error-matrix.png" height="20">
 
 where <b><i>D<sub>i</sub></i></b> is the AO-basis density matrix used to construct 
-<b><i>F<sub>i</sub></i></b>, and  ** *S* ** is the AO-basis overlap matrix.  Minimization of ** *e'* ** under the constraint that 
+<b><i>F<sub>i</sub></i></b>, and  <b><i>S</i></b> is the AO-basis overlap matrix.  Minimization of <b><i>e'</i></b> under the constraint that 
 
-```
-EQUATION
-\sum_i c_i = 1
-```
-
+<img src="./figures/constraint.png" height="45">
 
 leads to the following system of linear equations for the c<sub>i</sub>:
 
-```
-EQUATION
-\left(
-\begin{array}{ccccc}
-B_{11} & B_{12} & \ldots & B_{1m} & -1 \\
-B_{21} & B_{22} & \ldots & B_{2m} & -1 \\
-\ldots & \ldots & \ldots & \ldots & -1 \\
-B_{m1} & B_{m2} & \ldots & B_{mm} & -1 \\
--1 & -1 & \ldots & -1 & 0 \\
-\end{array}
-\right) \left(
-\begin{array}{c}
-c_1 \\
-c_2 \\
-\ldots \\
-c_m \\
-\lambda
-\end{array}
-\right) = \left(
-\begin{array}{c}
-0 \\
-0 \\
-\ldots \\
-0 \\
--1 \\
-\end{array}
-\right),
-```
+<img src="./figures/sys-lin-eqn-ci.png" height="125">
 
-where lambda is a Lagrangian multiplier and the elements <b>B<sub>ij</sub></b> are computed as dot products of error matrices:
+where lambda is a Lagrangian multiplier and the elements <i>B<sub>ij</sub></i> are computed as dot products of error matrices:
 
-```
-EQUATION
-B_{ij} \equiv {\mathbf e}_i \cdot {\mathbf e}_j.
-```
-
+<img src="./figures/Bij.png" height="20">
 
 ## Step #1: Compute the Error Matrix in Each Iteration
 
-Compute the error matrix for the current iteration using the matrix equation  for **e**<sub>i</sub> given above.  
-Note that the density matrix you use must be the same one used to construct the corresponding Fock matrix.  
+Compute the error matrix for the current iteration using the matrix equation  for <b><i>e<sub>i</sub></i></b> given above.
+Note that the density matrix you use must be the same one used to construct the corresponding Fock matrix.
 If you print the error matrix in each iteration, you should be able to note that it gradually falls to zero as the SCF procedure converges.
 
 ## Step #2: Build the B Matrix and Solve the Linear Equations
 
-After you have computed at least two error matrices, it is possible to begin the DIIS extrapolation procedure.  
+After you have computed at least two error matrices, it is possible to begin the DIIS extrapolation procedure.
 Compute the B matrix above for all of the current error matrices. 
 (Note that the matrix is symmetric, so one need only compute the lower triangle to get the entire matrix).
 
 Next, use a standard linear-equation solver (such as the DGESV function in the LAPACK library, 
 to which PSI4 has an interface named C_DGESV) to compute the <b>c<sub>i</sub></b> coefficients. 
 (NB: If you use the LAPACK solver, or any LAPACK or BLAS function for that matter, you must use matrices allocated as contiguous memory, 
-as discussed in [Project #7](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2307#usefulPsiFeatures)).
+as discussed in [Project #7](../Project%2307)).
 
 ## Step #3: Compute the New Fock Matrix
 
-Build a new Fock matrix using the equation for ** *F'* ** above and continue with the SCF procedure as usual.  
-This implies that one must store all of the Fock matrices corresponding to each of the error matrices used in constructing the B matrix above.  Note:
+Build a new Fock matrix using the equation for <b><i>F'</i></b> above and continue with the SCF procedure as usual.
+This implies that one must store all of the Fock matrices corresponding to each of the error matrices used in constructing the B matrix above.
+Note:
 
   * Do **not** use the extrapolated Fock matrix to compute error matrices for subsequent DIIS steps.
   * Keep only a relatively small number of error matrices; six to eight are reasonable for closed-shell SCF calculations. When the chosen number of error
   matrices is exceeded delete the oldest error matrix.
 
-Once the procedure is complete and working correctly, you should notice a considerable reduction in the number of SCF cycles required to achieve convergence.  
-For example, for the STO-3G/H2O test case from [Project #3](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303), 
+Once the procedure is complete and working correctly, you should notice a considerable reduction in the number of SCF cycles required to achieve convergence.
+For example, for the STO-3G/H<sub>2</sub>O test case from [Project #3](../Project%2303), 
 the simple SCF algorithm converges to 10<sup>-12</sup> in the density in 39 iterations:
 ```
  Iter        E(elec)              E(tot)               Delta(E)             RMS(D)

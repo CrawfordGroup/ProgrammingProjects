@@ -9,7 +9,7 @@ algorithm to allow computation of several eigenvalues simultaneously rather
 than one at a time<sup id="r2">[2](#f2)</sup>. The
 purpose of this project is to illustrate the use of what is now called the
 Davidson-Liu algorithm in the context of a 
-[CIS computation](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312).
+[CIS computation](../Project%2312).
 
 ## The Basic Algorithm
 
@@ -29,26 +29,19 @@ from a well-chosen subspace of the full determinantal space.
 
 Compute a representation of the Hamiltonian within the space of guess vectors,
 
-```
-EQUATION
-G_{ij} \equiv \langle {\mathbf b}_i | H | {\mathbf b}_j \rangle = 
-\langle {\mathbf b}_i | H {\mathbf b}_j \rangle = \langle {\mathbf b}_i | {\mathbf \sigma}_j \rangle,\ \ 1\leq i,j \leq L
-```
+<img src="./figures/guess-vector-hamiltonian.png" height="22.5">
+
 and then diagonalize this so-called "subspace Hamiltonian",
 
-```
-EQUATION
-{\mathbf G} \alpha^k = \lambda^k \alpha^k,\ \ k=1,2,\cdots,M
-```
+<img src="./figures/diag-subspace-hamiltonian.png" height="25">
+
 where *M* is the number of roots of interest. The current estimate of each of
 the *M* eigenvectors we want is a linear combination of the guess vectors,
 with the &alpha;<sup>k</sup> subspace eigenvectors providing the
 coefficients, *viz.*
 
-```
-EQUATION
-{\mathbf c}^k = \sum_i^L \alpha_i^k {\mathbf b}_i.
-```
+<img src="./figures/coefficients.png" height="60">
+
 The dimension of ***G*** is typically very small (perhaps a dozen times the
 number of guess vectors, *L*), so one can used a standard diagonalization
 package (such as DSYEV in LAPACK) for this task.  Note that the most expensive
@@ -62,16 +55,12 @@ elements must be computed "on the fly" during the computation of each
 
 Build a set of "correction vectors",
 
-```
-EQUATION
-\delta^k_I \equiv \left(\lambda^k - H_{II}\right)^{-1} r_I^k, \ \ I=1,2,\cdots,N
-```
+<img src="./figures/correction-vectors.png" height="30">
+
 where the "residual" vectors are defined as
 
-```
-EQUATION
-{\mathbf r}^k \equiv \sum_{i=1}^L \alpha^k_i\left( {\mathbf H} - \lambda^k \right) {\mathbf b}_i,
-```
+<img src="./figures/residual-vectors.png" height="60">
+
 and *N* is the dimension of the Hamiltonian (i.e. the number of determinants).
 The inverse appearing in the definition of the correction vectors is commonly
 referred to as the "preconditioner". Notice that the residual vectors are so
@@ -92,21 +81,17 @@ Return to step #2 and continue.
 ## CIS Sigma Equation
 
 We will focus on the spin-adapted singlet formulation of CIS, 
-for which the <b>&sigma;</b> = <b>H c</b>equation was given in 
-[Project 12](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312):
+for which the <b>&sigma;</b> = <b>H c</b> equation was given in 
+[Project 12](../Project%2312):
 
-```
-EQUATION
-\sigma(m)_{ia} = \sum_{jb} H_{ia,jb} c_j^b(m) = \sum_{jb} \left[ f_{ab} \delta_{ij} - f_{ij} \delta_{ab} + 2 <aj|ib> - <aj|bi> \right] c_j^b(m).
-```
+<img src="./figures/spin-adapted-cis-eqn.png" height="50">
 
 ## Unit Guess Vectors
 
 What should we choose for guess vectors?  As noted above, the simplest choice
 is probably a set of unit vectors, one for each eigenvalue you want.  But in
 what position of the vector should we put the 1?  For a hint, look at the
-structure of the 
-[spin-adapted singlet CIS Hamiltonian](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2312/hints/hint1.2)  
+structure of the [spin-adapted singlet CIS Hamiltonian](../Project%2312/hints/hint2.md)  
 for the H<sub>2</sub>O STO-3G test case and note that it is
 strongly diagonally dominant.  Thus, if the diagonal elements are reasonable
 approximations to the true eigenvalues, and we want to compute only the lowest
@@ -120,13 +105,9 @@ dimension to something more manageable before continuing the Davidson-Liu
 algorithm.  A typical choice is to collapse to the current best set of guesses
 using the equation given above for the current final eigenvectors:
 
-```
-EQUATION
-{\mathbf c}^k = \sum_i^L \alpha_i^k {\mathbf b}_i.
-```
-
+<img src="./figures/final-eigenvectors.png" height="60">
 
 #### References
- - <b id="f1">1</b>: E.R. Davidson, "The iterative calculation of a few of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," *J. Comput. Phys.* **17**, 87 (1975).[up](#r1)
- - <b id="f2">2</b>: B.Liu, "The simultaneous expansion method for the iterative solution of several of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," Technical Report LBL-8158, Lawrence Berkeley Laboratory, University of California, Berkeley, 1978.[up](#r2)
- - <b id="f3">3</b>: C.D. Sherrill, "The Configuration Interaction Method: Advances in Highly Correlated Approaches," *Adv. Quantum Chem.* **34**, 143 (1998). [up](#r3)
+ - <b id="f1">1</b>: E.R. Davidson, "The iterative calculation of a few of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," *J. Comput. Phys.* **17**, 87 (1975). [(return to text)](#r1)
+ - <b id="f2">2</b>: B.Liu, "The simultaneous expansion method for the iterative solution of several of the lowest eigenvalues and corresponding eigenvectors of large real-symmetric matrices," Technical Report LBL-8158, Lawrence Berkeley Laboratory, University of California, Berkeley, 1978. [(return to text)](#r2)
+ - <b id="f3">3</b>: C.D. Sherrill, "The Configuration Interaction Method: Advances in Highly Correlated Approaches," *Adv. Quantum Chem.* **34**, 143 (1998). [(return to text)](#r3)
