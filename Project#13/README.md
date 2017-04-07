@@ -72,7 +72,7 @@ root) and the change in the corresponding eigenvalue between each iteration.
 
 Normalize each correction vector, f<b>&delta;</b><sup>k</sup>, 
 then orthogonalize it against the existing set of guesses, **b**<sub>i</sub>, 
-using the [Schmidt Orthogonalization procedure](http://en.wikipedia.org/wiki/Gram–Schmidt_process|Schmidt orthogonalization procedure),
+using the [Schmidt Orthogonalization procedure](http://en.wikipedia.org/wiki/Gram–Schmidt_process),
 for example.  If the orthonormalized correction vector has a norm larger than some chosen threshold (e.g. 10<sup>-3</sup>), 
 include it in the set of guess vectors.  If not, discard it.  (Thus, the dimension of the guess space, *L*, gradually increases in each iteration.)
 
