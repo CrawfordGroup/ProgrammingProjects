@@ -8,7 +8,7 @@ You require the converged T-amplitudes generated in [Project # 5](../Project%230
 
 ## Step 2: Create matrix elements of the similarity-transformed Hamiltonian
 
-< Hamiltonian fig here >
+![Hbar](./figures/so_sim_trans_H.png)
 
 ## Step 3: Diagonalize the similarity-transformed Hamiltonian
 
