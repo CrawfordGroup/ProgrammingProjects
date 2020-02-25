@@ -56,3 +56,11 @@ Now you should see a directory called `ProgrammingProjects` inside you will find
  - [Project #13](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2313): the Davidson-Liu Algorithm: CIS
  - [Project #14](https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2314): Excited Electronic States: EOM-CCSD (*In Preparation*)
  
+# Possible Future Projects
+ - Some Future Projects
+ - SCF Analytic Energy Gradients
+ - MP2 Analytic Energy Gradients
+ - Integral-direct SCF
+ - Response properties: Hartree-Fock dipole-polarizabilities
+ - Response properties: CCSD dipole-polarizabilities
+ - Local MP2
