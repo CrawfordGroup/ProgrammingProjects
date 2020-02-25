@@ -13,7 +13,7 @@ The similarity-transformed Hamiltonian may be written as:
 
 <img src="./figures/so_sim_trans_H.png" height="60">
 
-in terms of sums over one-body, two-body and higher terms. These terms can then be found via the BCH expansion of the similarity-transformed Hamiltonian, in terms of converged T-amplitudes and one- and two-electron components of the Hamiltonian.
+in terms of sums over one-body, two-body and higher terms. These terms can then be found via the BCH expansion of the similarity-transformed Hamiltonian, in terms of converged T-amplitudes and one- and two-electron components of the Hamiltonian. A table of terms can be found in the paper by Stanton and Bartlett.<sup id="r2">[2](#f2)</sup>
 
 ## Step 3: Diagonalize the similarity-transformed Hamiltonian
 
