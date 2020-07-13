@@ -94,9 +94,9 @@ int main()
     I(0,0) += mi * (mol.geom[i][1]*mol.geom[i][1] + mol.geom[i][2]*mol.geom[i][2]);
     I(1,1) += mi * (mol.geom[i][0]*mol.geom[i][0] + mol.geom[i][2]*mol.geom[i][2]);
     I(2,2) += mi * (mol.geom[i][0]*mol.geom[i][0] + mol.geom[i][1]*mol.geom[i][1]);
-    I(0,1) += mi * mol.geom[i][0]*mol.geom[i][1];
-    I(0,2) += mi * mol.geom[i][0]*mol.geom[i][2];
-    I(1,2) += mi * mol.geom[i][1]*mol.geom[i][2];
+    I(0,1) -= mi * mol.geom[i][0]*mol.geom[i][1];
+    I(0,2) -= mi * mol.geom[i][0]*mol.geom[i][2];
+    I(1,2) -= mi * mol.geom[i][1]*mol.geom[i][2];
   }
 
   I(1,0) = I(0,1);
@@ -215,9 +215,9 @@ Torsional angles:
 Molecular center of mass:   0.64494926   0.00000000   2.31663792
 
 Moment of inertia tensor (amu bohr^2):
-    156.154091561645       0.000000000000      52.855584120568
+    156.154091561645       0.000000000000     -52.855584120568
       0.000000000000     199.371126996236       0.000000000000
-     52.855584120568       0.000000000000      54.459548882464
+    -52.855584120568       0.000000000000      54.459548882464
 
 Principal moments of inertia (amu * bohr^2):
       31.964078  178.649562  199.371127
