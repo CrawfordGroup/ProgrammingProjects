@@ -97,7 +97,7 @@ Diagonal:
 
 <img src="./figures/inertia-diag.png" width="750">
 
-Off-diagonal:
+Off-diagonal (add a negative sign):
 
 <img src="./figures/inertia-off-diag.png" width="600">
 
