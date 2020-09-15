@@ -1,5 +1,3 @@
-# Underdevelopment
-
 # C++ Programming Tutorial in Chemistry
 This tutorial is intended to touch on many, but certainly not all, of the fundamentals of C++ programming with an emphasis on quantum chemistry.  Although I hope this section will get you started, it is not a substitute for a more complete reference manual.  For more C++ language details, you may find the standard text by Josuttis [buy it](http://www.amazon.com/C-Standard-Library-Tutorial-Reference/dp/0201379260) useful or, for VT users, get it [on-line from the campus library](http://proquest.safaribooksonline.com/0201379260) or a decent on-line tutorial such as [this one](http://www.cplusplus.com/doc/tutorial/) or [this one](http://www.cprogramming.com/tutorial.html). 
 
@@ -26,7 +24,7 @@ git clone git@github.com:CrawfordGroup/ProgrammingProjects.git
 ```
 Now you should see a directory called `ProgrammingProjects` inside you will find all of the files that you can see on github.
 
-# The Fundamentals (Updated: 29 August 2014) 
+# The Fundamentals 
  - [An Initial Example](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/An-Initial-Example)
  - [What is a "Compilation"](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/What-is-a-%22Compilation%22%3F) 
  - [Code Comments](https://github.com/CrawfordGroup/ProgrammingProjects/wiki/Code-Comments)
