@@ -1,37 +1,5 @@
-## Welcome to GitHub Pages
+## Crawford-Group C++ Programming Tutorial in Chemistry
 
-You can use the [editor on GitHub](https://github.com/CrawfordGroup/ProgrammingProjects/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+This tutorial is intended to touch on many, but certainly not all, of the fundamentals of C++ programming with an emphasis on quantum chemistry. Although I hope this section will get you started, it is not a substitute for a more complete reference manual. For more C++ language details, you may find [the standard text by Josuttis to be useful](https://www.amazon.com/C-Standard-Library-Tutorial-Reference/dp/0201379260) or try a decent on-line tutorial such as [this one](http://www.cplusplus.com/doc/tutorial/) or [this one](http://www.cprogramming.com/tutorial.html).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/CrawfordGroup/ProgrammingProjects/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+If you are new to programming, one way to approach this tutorial is to read through "The Fundamentals" list on the wiki first, then proceed with Project #1, using the earlier material as a reference. If you are already experienced with programming, you may be able to start immediately with Project #1. If you already have experience with electronic structure theory programs, then you may be ready for the Hartee-Fock programming project or even more advanced topics.
