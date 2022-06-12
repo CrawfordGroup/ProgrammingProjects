@@ -27,7 +27,11 @@ After downloading the file to your computer (to a file called “geom.dat”, fo
 ## Step 2: Bond Lengths
 Calculate the interatomic distances using the expression:
 
-<img src="./figures/distances.png" height="40">
+<!--<img src="./figures/distances.png" height="40">-->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/distances.png">
+  <imgsrc="./figures/distances.png" height="40">
+</picture>
 
 where x, y, and z are Cartesian coordinates and i and j denote atomic indices.
 
