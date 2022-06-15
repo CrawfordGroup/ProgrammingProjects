@@ -30,6 +30,7 @@ Calculate the interatomic distances using the expression:
 <!--<img src="./figures/distances.png" height="40">-->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/distances.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/distances.png">
   <imgsrc="./figures/distances.png" height="40">
 </picture>
 
