@@ -1,0 +1,1 @@
+An excellent source for atomic masses and other physical constants is the [National Institute of Standard and Technology (NIST) website](http://physics.nist.gov/cgi-bin/Compositions/stand_alone.pl?ele=&ascii=html&isotype=some).

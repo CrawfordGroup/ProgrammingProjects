@@ -1,0 +1,1 @@
+The sign of a torsional/dihedral angle among atoms **_i-j-k-l_** is positive (negative) if the vector along **_k-l_** lies to the right (left) of the plane formed by **_i-j-k_** when the plane is viewed along the **_j-k_** vector.
