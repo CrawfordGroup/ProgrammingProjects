@@ -68,10 +68,10 @@ where the e<sub>ij</sub> are unit vectors between the atoms, e.g.,
 ## Step 4: Out-of-Plane Angles
 Calculate all possible out-of-plane angles. For example, the angle &theta;<sub>ijkl</sub> for atom i out of the plane containing atoms j-k-l (with k as the central atom, connected to i) is given by:
 
-<img src="./figures/oop-angle.png" height="60">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/">
-  <source media="(prefers-color-scheme: light)" srcset="./figures/">
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/oop-angle.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/oop-angle.png">
+  <img src="./figures/oop-angle.png" height="60">
 </picture>
 
 - [Hint 1](./hints/hint4-1.md): Memory allocation?
