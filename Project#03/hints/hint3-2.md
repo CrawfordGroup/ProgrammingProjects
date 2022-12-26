@@ -1,16 +1,16 @@
 If you've written your program so that the two-electron integrals are stored in a one-dimensional array, you may have recognized that your program spends quite a bit of its time calculating compound indices.  Is there a way to speed up this process?  Sure!  Pre-compute the indices instead.  Look again at the structure of a symmetric matrix, with the elements of the lower triangle numbered top-to-bottom/left-to-right:
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/lower-triang-numbered-matrix2.png">
-  <source media="(prefers-color-scheme: light)" srcset="./figures/lower-triang-numbered-matrix2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="../figures/dark/lower-triang-numbered-matrix2.png">
+  <source media="(prefers-color-scheme: light)" srcset="../figures/lower-triang-numbered-matrix2.png">
   <img src="../figures/lower-triang-numbered-matrix2.png" height="150">
 </picture>
 
 We calculate these above values from the raw row and column indices, *i* and *j*, respectively using:
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/ioff-compound-index2.png">
-  <source media="(prefers-color-scheme: light)" srcset="./figures/ioff-compound-index2.png">
+  <source media="(prefers-color-scheme: dark)" srcset="../figures/dark/ioff-compound-index2.png">
+  <source media="(prefers-color-scheme: light)" srcset="../figures/ioff-compound-index2.png">
   <img src="../figures/ioff-compound-index2.png" height="70">
 </picture>
 

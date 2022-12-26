@@ -4,8 +4,8 @@ Here are two approaches for the [diagonalization](http://en.wikipedia.org/wiki/D
 Since the moment of inertia tensor is only a 3x3 matrix, a brute-force approach via the secular determinant is feasible:
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/determinant.png">
-  <source media="(prefers-color-scheme: light)" srcset="./figures/determinant.png">
+  <source media="(prefers-color-scheme: dark)" srcset="../figures/dark/determinant.png">
+  <source media="(prefers-color-scheme: light)" srcset="../figures/determinant.png">
   <img src="../figures/determinant.png" height="60">
 </picture>
 
