@@ -51,9 +51,10 @@ Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 and store them in appropriately constructed matrices.  Then form the "core Hamiltonian":
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/core-hamiltonian.png" height="25">
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/core-hamiltonian.png">
   <source media="(prefers-color-scheme: light)" srcset="./figures/core-hamiltonian.png">
   <img src="./figures/core-hamiltonian.png" height="25">
+  <img src="./figures/dark/core-hamiltonian.png" height="25">
 </picture>
 
 Note that the one-electron integrals provided include only the *permutationally unique* integrals, but you should store the full matrices for convenience.  
