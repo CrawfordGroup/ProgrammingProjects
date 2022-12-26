@@ -26,19 +26,35 @@ Read the nuclear repulsion energy from the [enuc.dat](./input/h2o/STO-3G/enuc.da
 
 Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 
-<img src="./figures/overlap.png" height="50">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/overlap.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/overlap.png">
+  <img src="./figures/overlap.png" height="50">
+</picture>
 
 [kinetic-energy](./input/h2o/STO-3G/t.dat)
 
-<img src="./figures/kinetic-energy.png" height="50">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/kinetic-energy.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/kinetic-energy.png">
+  <img src="./figures/kinetic-energy.png" height="50">
+</picture>
 
 [nuclear-attraction integrals](./input/h2o/STO-3G/v.dat)
 
-<img src="./figures/nuclear-attraction.png" height="55">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/nuclear-attraction.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/nuclear-attraction.png">
+  <img src="./figures/nuclear-attraction.png" height="55">
+</picture>
 
 and store them in appropriately constructed matrices.  Then form the "core Hamiltonian":
 
-<img src="./figures/core-hamiltonian.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/core-hamiltonian.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/core-hamiltonian.png">
+  <img src="./figures/core-hamiltonian.png" height="25">
+</picture>
 
 Note that the one-electron integrals provided include only the *permutationally unique* integrals, but you should store the full matrices for convenience.  
 Note also that the AO indices on the integrals in the files start with "1" rather than "0".
@@ -52,24 +68,44 @@ Read the two-electron repulsion integrals from the
 file.
 The integrals in this file are provided in Mulliken notation over real AO basis functions:
 
-<img src="./figures/eri.png" height="45">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/eri.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/eri.png">
+  <img src="./figures/eri.png" height="45">
+</picture>
 
 Hence, the integrals obey the eight-fold permutational symmetry relationships:
 
-<img src="./figures/permutational-symmetry.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/permutational-symmetry.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/permutational-symmetry.png">
+  <img src="./figures/permutational-symmetry.png" height="20">
+</picture>
 
 and only the permutationally unique integrals are provided in the file, with the restriction that, for each integral, the following relationships hold:
 
-<img src="./figures/index-restrictions.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/index-restrictions.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/index-restrictions.png">
+  <img src="./figures/index-restrictions.png" height="20">
+</picture>
 
 where
 
-<img src="./figures/compound-index-restrictions.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/compound-index-restrictions.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/compound-index-restrictions.png">
+  <img src="./figures/compound-index-restrictions.png" height="20">
+</picture>
 
 Note that the two-electron integrals may be stored efficiently in a one-dimensional array and the above relationship used to map between given 
 &mu;, &nu;, &lambda;, and &sigma; indices and a "compound index" defined as:
 
-<img src="./figures/compound-index-restrictions2.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/compound-index-restrictions2.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/compound-index-restrictions2.png">
+  <img src="./figures/compound-index-restrictions2.png" height="20">
+</picture>
 
   * [Hint 1](./hints/hint3-1.md): Compound indices
   * [Hint 2](./hints/hint3-2.md): Pre-Computed Lookup Arrays
@@ -80,13 +116,21 @@ Note that the two-electron integrals may be stored efficiently in a one-dimensio
 
 Diagonalize the overlap matrix:
 
-<img src="./figures/diag-mw-hessian.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/diag-mw-hessian.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/diag-mw-hessian.png">
+  <img src="./figures/diag-mw-hessian.png" height="20">
+</picture>
 
 where L<sub>S</sub> is the matrix of eigenvectors (columns) and &Lambda;<sub>S</sub> is the diagonal matrix of corresponding eigenvalues.
 
 Build the symmetric orthogonalization matrix using:
 
-<img src="./figures/symm-orthog-matrix.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/symm-orthog-matrix.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/symm-orthog-matrix.png">
+  <img src="./figures/symm-orthog-matrix.png" height="25">
+</picture>
 
 where the tilde denotes the matrix transpose.
 
@@ -97,21 +141,37 @@ where the tilde denotes the matrix transpose.
 
 Form an initial (guess) Fock matrix in the orthonormal AO basis using the core Hamiltonian as a guess:
 
-<img src="./figures/initial-fock.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/initial-fock.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/initial-fock.png">
+  <img src="./figures/initial-fock.png" height="25">
+</picture>
 
 Diagonalize the Fock matrix:
 
-<img src="./figures/diag-fock.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/diag-fock.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/diag-fock.png">
+  <img src="./figures/diag-fock.png" height="20">
+</picture>
 
 Note that the &epsilon;<sub>0</sub> matrix contains the initial orbital energies.
 
 Transform the eigenvectors into the original (non-orthogonal) AO basis:
 
-<img src="./figures/transform-coeff.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/transform-coeff.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/transform-coeff.png">
+  <img src="./figures/transform-coeff.png" height="25">
+</picture>
 
 Build the density matrix using the occupied MOs:
 
-<img src="./figures/density-matrix.png" height="55">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/density-matrix.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/density-matrix.png">
+  <img src="./figures/density-matrix.png" height="55">
+</picture>
 
 where *m* indexes the columns of the coefficient matrices, and the summation includes only the occupied spatial MOs.
 
@@ -123,11 +183,19 @@ where *m* indexes the columns of the coefficient matrices, and the summation inc
 
 The SCF electronic energy may be computed using the density matrix as:
 
-<img src="./figures/initial-scf-energy.png" height="60">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/initial-scf-energy.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/initial-scf-energy.png">
+  <img src="./figures/initial-scf-energy.png" height="60">
+</picture>
 
 The total energy is the sum of the electronic energy and the nuclear repulsion energy:
 
-<img src="./figures/initial-total-energy.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/initial-total-energy.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/initial-total-energy.png">
+  <img src="./figures/initial-total-energy.png" height="25">
+</picture>
 
 where *0* denotes the initial SCF energy.
 
@@ -137,7 +205,11 @@ where *0* denotes the initial SCF energy.
 
 Start the SCF iterative procedure by building a new Fock matrix using the previous iteration's density as:
 
-<img src="./figures/new-fock.png" height="60">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/new-fock.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/new-fock.png">
+  <img src="./figures/new-fock.png" height="60">
+</picture>
 
 where the double-summation runs over all the AOs and *i-1* denotes the density for the last iteration.
 
@@ -150,19 +222,35 @@ Form the new density matrix following the same procedure as in Step #5 above:
 
 Orthogonalize:
 
-<img src="./figures/orthog-fock.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/orthog-fock.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/orthog-fock.png">
+  <img src="./figures/orthog-fock.png" height="20">
+</picture>
 
 Diagonalize:
 
-<img src="./figures/diag-new-fock.png" height="15">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/diag-new-fock.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/diag-new-fock.png">
+  <img src="./figures/diag-new-fock.png" height="15">
+</picture>
 
 Back-transform:
 
-<img src="./figures/back-transform-coeff.png" height="20">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/back-transform-coeff.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/back-transform-coeff.png">
+  <img src="./figures/back-transform-coeff.png" height="20">
+</picture>
 
 Compute the density:
 
-<img src="./figures/compute-density.png" height="55">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/compute-density.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/compute-density.png">
+  <img src="./figures/compute-density.png" height="55">
+</picture>
 
 where *i* denotes the current iteration density.
 
@@ -170,14 +258,22 @@ where *i* denotes the current iteration density.
 
 Compute the new SCF energy as before:
 
-<img src="./figures/compute-new-scf-energy.png" height="125">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/compute-new-scf-energy.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/compute-new-scf-energy.png">
+  <img src="./figures/compute-new-scf-energy.png" height="125">
+</picture>
 
 where *i* denotes the SCF energy for the *i*th iteration.
 
 ## Step #10: Test for Convergence 
 Test both the energy and the density for convergence:
 
-<img src="./figures/convergence-test.png" height="125">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/convergence-test.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/convergence-test.png">
+  <img src="./figures/convergence-test.png" height="125">
+</picture>
 
 If the difference in consecutive SCF energy and the root-mean-squared difference in consecutive densities do not fall below the prescribed thresholds, return to Step #7 and continue from there.
 
@@ -187,22 +283,38 @@ If the difference in consecutive SCF energy and the root-mean-squared difference
 ###  The MO-Basis Fock Matrix
 At convergence, the canonical Hartree-Fock MOs are, by definition, eigenfunctions of the Fock operator, viz.
 
-<img src="./figures/canonical-mos.png" height="25">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/canonical-mos.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/canonical-mos.png">
+  <img src="./figures/canonical-mos.png" height="25">
+</picture>
 
 If we multiply on the left by an arbitrary MO and integrate, we obtain:
 
-<img src="./figures/mo-fock-matrix-element.png" height="30">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/mo-fock-matrix-element.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/mo-fock-matrix-element.png">
+  <img src="./figures/mo-fock-matrix-element.png" height="30">
+</picture>
 
 In other words, the Fock matrix should be diagonal in the MO basis, with the orbital energies as its diagonal elements.  We can demonstrate this explicitly using the AO-basis Fock matrix by first re-writing the above expression using the LCAO-MO coefficients:
 
-<img src="./figures/mo-fock-matrix.png" height="50">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/mo-fock-matrix.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/mo-fock-matrix.png">
+  <img src="./figures/mo-fock-matrix.png" height="50">
+</picture>
 
 Use the above equation to transform the Fock matrix from the AO basis to the MO basis and demonstrate that it is indeed diagonal (to within the convergence limits of the SCF iterative procedure).
 
 ### One-Electron Properties 
 As discussed in detail in Ch. 3 of the text by Szabo and Ostlund, the calculation of one-electron properties requires density matrix and the relevant property integrals.  The electronic contribution to the electric-dipole moment may be computed using,
 
-<img src="./figures/electric-dipole-moment.png" height="50">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/electric-dipole-moment.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/electric-dipole-moment.png">
+  <img src="./figures/electric-dipole-moment.png" height="50">
+</picture>
 
 where the vector notation implies three sets of dipole-moment integrals -- one for each Cartesian component of the dipole operator.
 
@@ -215,7 +327,11 @@ The test cases provided below include the structural information dipole integral
 ### Population Analysis/Atomic Charges
 A Mulliken population analysis (also described in Szabo & Ostlund, Ch. 3) requires the overlap integrals and the electron density, in addition to information about the number of basis functions centered on each atom.  The charge on atom *A* may be computed as:
 
-<img src="./figures/atomic-charge.png" height="50">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/atomic-charge.png">
+  <source media="(prefers-color-scheme: light)" srcset="./figures/atomic-charge.png">
+  <img src="./figures/atomic-charge.png" height="50">
+</picture>
 
 where the summation is limited to only those basis functions centered on atom *A*.
 
