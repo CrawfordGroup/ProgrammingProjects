@@ -26,6 +26,7 @@ Read the nuclear repulsion energy from the [enuc.dat](./input/h2o/STO-3G/enuc.da
 
 Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
 
+<img src="./figures/overlap.png" height="50">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/overlap.png">
   <source media="(prefers-color-scheme: light)" srcset="./figures/overlap.png">
