@@ -33,6 +33,7 @@ Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
   <img src="./figures/overlap.png" height="50">
 </picture>
 <br/>
+<br/>
 
 [kinetic-energy](./input/h2o/STO-3G/t.dat)
 
