@@ -32,6 +32,7 @@ Read the AO-basis [overlap](./input/h2o/STO-3G/s.dat)
   <source media="(prefers-color-scheme: light)" srcset="./figures/overlap.png">
   <img src="./figures/overlap.png" height="50">
 </picture>
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./figures/dark/overlap.png">
   <source media="(prefers-color-scheme: light)" srcset="./figures/overlap.png">
